@@ -6,7 +6,8 @@
     "resources": "Resources",
     "membership": "Membership",
     "contact": "Contact",
-    "becomeMember": "Become a member"
+    "becomeMember": "Become a member",
+    "admin": "Admin"
   },
   "home": {
     "hero": {
@@ -64,6 +65,13 @@
   "about": {
     "title": "About TGBC",
     "subtitle": "The Tunisia Green Building Council is the reference organization for promoting sustainable building in Tunisia",
+    "introduction": {
+      "title": "Who are we?",
+      "paragraph1": "Tunisia Green Building Council is a non-profit organization dedicated to promoting sustainable construction and the quality of the built environment in Tunisia.",
+      "paragraph2": "Founded in 2012 by architects, engineers, academics, construction sector companies, and government officials, Tunisia GBC aims to support the country's sustainable and resilient development by encouraging sustainable construction and low-carbon, economically viable practices, while promoting healthy and resilient cities and territories.",
+      "paragraph3": "Since 2019, Tunisia GBC has joined the global network, World Green Building Council (WorldGBC), which brings together national Green Building Councils from over 70 countries.",
+      "paragraph4": "Established in 2002, it plays a crucial role in promoting sustainable construction practices worldwide."
+    },
     "vision": {
       "title": "Our Vision",
       "description1": "TGBC is an independent organization that brings together building professionals, academic institutions, public authorities and civil society around a common goal: transforming the construction sector in Tunisia towards greater sustainability.",
@@ -339,6 +347,97 @@
       "title": "Message sent!",
       "message": "Your message has been received. Our team will contact you shortly.",
       "sendAnother": "Send another message"
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "subtitle": "Manage content, resources and memberships",
+    "stats": {
+      "totalMembers": "Total members",
+      "pendingRequests": "Pending requests",
+      "totalResources": "Total resources",
+      "publishedResources": "Published resources"
+    },
+    "tabs": {
+      "dashboard": "Dashboard",
+      "memberships": "Memberships",
+      "resources": "Resources",
+      "content": "Content"
+    },
+    "dashboard": {
+      "recentActivity": "Recent activity",
+      "newMember": "New member registered",
+      "newResource": "New resource added",
+      "quickActions": "Quick actions"
+    },
+    "actions": {
+      "manageMembers": "Manage members",
+      "addResource": "Add resource"
+    },
+    "memberships": {
+      "title": "Membership management",
+      "pending": "pending",
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "type": "Type",
+      "status": "Status",
+      "actions": "Actions",
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      }
+    },
+    "resources": {
+      "title": "Resource management",
+      "add": "Add resource",
+      "edit": "Edit resource",
+      "type": "Type",
+      "category": "Category",
+      "status": "Status",
+      "actions": "Actions",
+      "status": {
+        "draft": "Draft",
+        "published": "Published",
+        "archived": "Archived"
+      },
+      "form": {
+        "title": "Title",
+        "description": "Description",
+        "type": "Resource type",
+        "category": "Category",
+        "language": "Language",
+        "status": "Status",
+        "file": "File",
+        "upload": "Upload",
+        "cancel": "Cancel",
+        "create": "Create",
+        "update": "Update"
+      }
+    },
+    "content": {
+      "homePage": "Home page",
+      "aboutPage": "About page",
+      "heroTitle": "Main title",
+      "heroSubtitle": "Subtitle",
+      "aboutTitle": "About title",
+      "aboutDescription": "About description",
+      "save": "Save"
+    },
+    "auth": {
+      "title": "Admin Login",
+      "subtitle": "Access the administration panel",
+      "username": "Username",
+      "password": "Password",
+      "usernamePlaceholder": "Enter your username",
+      "passwordPlaceholder": "Enter your password",
+      "login": "Login",
+      "loading": "Logging in...",
+      "success": "Login successful!",
+      "error": "Invalid credentials",
+      "demo": "Demo account",
+      "logout": "Logout"
     }
   }
 }

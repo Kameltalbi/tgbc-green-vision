@@ -6,7 +6,8 @@
     "resources": "Ressources",
     "membership": "Adhésion",
     "contact": "Contact",
-    "becomeMember": "Devenir membre"
+    "becomeMember": "Devenir membre",
+    "admin": "Admin"
   },
   "home": {
     "hero": {
@@ -64,6 +65,13 @@
   "about": {
     "title": "À Propos du TGBC",
     "subtitle": "Le Tunisia Green Building Council est l'organisation de référence pour la promotion du bâtiment durable en Tunisie",
+    "introduction": {
+      "title": "Qui sommes-nous ?",
+      "paragraph1": "Tunisia Green Building Council est une organisation à but non lucratif dédiée à la promotion de la construction durable et la qualité du cadre bâti en Tunisie.",
+      "paragraph2": "Fondé en 2012, par des architectes, ingénieurs, universitaires, entreprises du secteur de la construction et responsables gouvernementaux, Tunisia GBC a pour objectif de soutenir le développement durable et resilient du pays en encourageant la construction durable et les pratiques à faible empreinte carbone et économiquement viables, tout en promouvant des villes et territoires sains et résilients.",
+      "paragraph3": "Depuis 2019, Tunisia GBC a rejoint le réseau mondial, World Green Building Council (WorldGBC) qui regroupe des conseils nationaux du bâtiment durable (Green Building Councils) de plus de 70 pays.",
+      "paragraph4": "Créé en 2002, il joue un rôle essentiel dans la promotion des pratiques de construction durable à travers le monde."
+    },
     "vision": {
       "title": "Notre Vision",
       "description1": "Le TGBC est une organisation indépendante qui rassemble les professionnels du bâtiment, les institutions académiques, les autorités publiques et la société civile autour d'un objectif commun : transformer le secteur de la construction en Tunisie vers plus de durabilité.",
@@ -339,6 +347,97 @@
       "title": "Message envoyé !",
       "message": "Votre message a été reçu. Notre équipe vous contactera dans les plus brefs délais.",
       "sendAnother": "Envoyer un autre message"
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "subtitle": "Gérez le contenu, les ressources et les adhésions",
+    "stats": {
+      "totalMembers": "Membres totaux",
+      "pendingRequests": "Demandes en attente",
+      "totalResources": "Ressources totales",
+      "publishedResources": "Ressources publiées"
+    },
+    "tabs": {
+      "dashboard": "Tableau de bord",
+      "memberships": "Adhésions",
+      "resources": "Ressources",
+      "content": "Contenu"
+    },
+    "dashboard": {
+      "recentActivity": "Activité récente",
+      "newMember": "Nouveau membre inscrit",
+      "newResource": "Nouvelle ressource ajoutée",
+      "quickActions": "Actions rapides"
+    },
+    "actions": {
+      "manageMembers": "Gérer les membres",
+      "addResource": "Ajouter une ressource"
+    },
+    "memberships": {
+      "title": "Gestion des adhésions",
+      "pending": "en attente",
+      "name": "Nom",
+      "email": "Email",
+      "company": "Entreprise",
+      "type": "Type",
+      "status": "Statut",
+      "actions": "Actions",
+      "status": {
+        "pending": "En attente",
+        "approved": "Approuvée",
+        "rejected": "Rejetée"
+      }
+    },
+    "resources": {
+      "title": "Gestion des ressources",
+      "add": "Ajouter une ressource",
+      "edit": "Modifier la ressource",
+      "type": "Type",
+      "category": "Catégorie",
+      "status": "Statut",
+      "actions": "Actions",
+      "status": {
+        "draft": "Brouillon",
+        "published": "Publiée",
+        "archived": "Archivée"
+      },
+      "form": {
+        "title": "Titre",
+        "description": "Description",
+        "type": "Type de ressource",
+        "category": "Catégorie",
+        "language": "Langue",
+        "status": "Statut",
+        "file": "Fichier",
+        "upload": "Télécharger",
+        "cancel": "Annuler",
+        "create": "Créer",
+        "update": "Mettre à jour"
+      }
+    },
+    "content": {
+      "homePage": "Page d'accueil",
+      "aboutPage": "Page À propos",
+      "heroTitle": "Titre principal",
+      "heroSubtitle": "Sous-titre",
+      "aboutTitle": "Titre À propos",
+      "aboutDescription": "Description À propos",
+      "save": "Enregistrer"
+    },
+    "auth": {
+      "title": "Connexion Administrateur",
+      "subtitle": "Accédez au panneau d'administration",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "login": "Se connecter",
+      "loading": "Connexion...",
+      "success": "Connexion réussie !",
+      "error": "Identifiants incorrects",
+      "demo": "Compte de démonstration",
+      "logout": "Se déconnecter"
     }
   }
 }

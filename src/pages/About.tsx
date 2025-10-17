@@ -119,6 +119,27 @@ const About = () => {
           </p>
         </div>
 
+        {/* Introduction Section */}
+        <section className="mb-20 bg-white/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-elegant">
+          <h2 className="font-display text-3xl font-bold text-center mb-8 text-foreground">
+            {t('about.introduction.title')}
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('about.introduction.paragraph1')}
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('about.introduction.paragraph2')}
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('about.introduction.paragraph3')}
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('about.introduction.paragraph4')}
+            </p>
+          </div>
+        </section>
+
         {/* Presentation Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="animate-fade-in">

@@ -46,6 +46,11 @@ const Footer = () => {
                   {t('nav.membership')}
                 </Link>
               </li>
+              <li>
+                <Link to="/admin" className="text-white/80 hover:text-white transition-colors">
+                  {t('nav.admin')}
+                </Link>
+              </li>
             </ul>
           </div>
 
