@@ -28,7 +28,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center gap-2">
             <div className="bg-white p-1 sm:p-2 rounded-lg">
               <img 
-                src="/logo tgbc.png" 
+                src="/logo TunisiaGBC.png" 
                 alt="Tunisia Green Building Council" 
                 className="h-10 sm:h-12 md:h-14 w-auto"
               />
