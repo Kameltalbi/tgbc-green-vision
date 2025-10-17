@@ -23,14 +23,14 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full bg-card/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-16 sm:h-20">
+        <div className="flex items-center h-18 sm:h-20 lg:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="bg-white p-1 sm:p-2 rounded-lg">
+            <div className="bg-white p-1.5 sm:p-2.5 rounded-lg">
               <img 
                 src="/logo TunisiaGBC.png" 
                 alt="Tunisia Green Building Council" 
-                className="h-10 sm:h-12 md:h-14 w-auto"
+                className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto"
               />
             </div>
           </Link>

@@ -272,7 +272,7 @@ const Resources = () => {
         )}
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
+        <div className="mt-18 sm:mt-20 lg:mt-24 text-center">
           <Card className="bg-gradient-primary text-white border-none shadow-elegant">
             <CardContent className="p-8">
               <h2 className="font-display text-2xl font-bold mb-4">

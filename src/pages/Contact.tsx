@@ -316,7 +316,7 @@ const Contact = () => {
         </div>
 
         {/* Map Section */}
-        <div className="mt-16">
+        <div className="mt-18 sm:mt-20 lg:mt-24">
           <Card className="shadow-elegant border-none">
             <CardContent className="p-8">
               <h2 className="font-display text-2xl font-bold mb-6 text-center text-foreground">

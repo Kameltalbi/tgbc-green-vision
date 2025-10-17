@@ -61,7 +61,7 @@ const Home = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden mt-16 sm:mt-20">
+      <section className="relative h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden mt-18 sm:mt-20 lg:mt-24">
         {/* Image de fond avec animation */}
         <div
           className="absolute inset-0 bg-cover bg-center animate-gentle-move"
