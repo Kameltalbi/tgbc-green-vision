@@ -63,10 +63,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden mt-16">
         <div
-          className="absolute inset-0 bg-cover bg-center animate-parallax"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-hero animate-gradient"></div>
+          <div className="absolute inset-0 bg-gradient-hero"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -170,7 +170,7 @@ const Home = () => {
                 style={{ transitionDelay: `${idx * 100 + 200}ms` }}
               >
                 <CardContent className="p-6">
-                  <div className={`${axis.color} w-16 h-16 rounded-xl flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform duration-300 animate-rotate-slow`}>
+                  <div className={`${axis.color} w-16 h-16 rounded-xl flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform duration-300`}>
                     {axis.icon}
                   </div>
                   <h3 className="font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">{axis.title}</h3>
