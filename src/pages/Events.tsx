@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Calendar as CalendarIcon, MapPin, Clock, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar as CalendarIcon, MapPin, Clock, ChevronLeft, ChevronRight, User, Mail, Phone, Building, Briefcase, Utensils, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 
 interface Event {
   id: number;
@@ -19,11 +23,34 @@ interface Event {
   year: number;
 }
 
+interface RegistrationForm {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company: string;
+  position: string;
+  dietary: string;
+  notes: string;
+}
+
 const Events = () => {
   const { t } = useTranslation();
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [registrationForm, setRegistrationForm] = useState<RegistrationForm>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    position: '',
+    dietary: '',
+    notes: ''
+  });
 
   const events: Event[] = [
     {
@@ -99,6 +126,47 @@ const Events = () => {
     } else {
       setCurrentMonth(currentMonth + 1);
     }
+  };
+
+  const handleRegistrationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Simuler l'envoi du formulaire
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      toast.success(t('events.registration.success'));
+      setShowRegistrationForm(false);
+      setSelectedEvent(null);
+      
+      // Reset form
+      setRegistrationForm({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        position: '',
+        dietary: '',
+        notes: ''
+      });
+    } catch (error) {
+      toast.error(t('events.registration.error'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (field: keyof RegistrationForm, value: string) => {
+    setRegistrationForm(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const openRegistrationForm = () => {
+    setShowRegistrationForm(true);
   };
 
   const daysInMonth = getDaysInMonth(currentMonth, currentYear);
@@ -226,10 +294,168 @@ const Events = () => {
             <p className="text-foreground leading-relaxed pt-4 border-t">
               {selectedEvent?.description}
             </p>
-            <Button className="w-full" variant="accent">
+            <Button className="w-full" variant="accent" onClick={openRegistrationForm}>
               {t('events.register')}
             </Button>
           </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Registration Form Modal */}
+      <Dialog open={showRegistrationForm} onOpenChange={setShowRegistrationForm}>
+        <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl flex items-center gap-2">
+              <User className="h-6 w-6 text-primary" />
+              {t('events.registration.title')}
+            </DialogTitle>
+            <p className="text-muted-foreground">
+              {t('events.registration.subtitle')}
+            </p>
+            {selectedEvent && (
+              <div className="bg-primary/10 p-3 rounded-lg mt-4">
+                <h3 className="font-semibold text-primary">{selectedEvent.title}</h3>
+                <p className="text-sm text-muted-foreground">{selectedEvent.date} - {selectedEvent.location}</p>
+              </div>
+            )}
+          </DialogHeader>
+          
+          <form onSubmit={handleRegistrationSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="firstName" className="flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  {t('events.registration.form.firstName')} *
+                </Label>
+                <Input
+                  id="firstName"
+                  value={registrationForm.firstName}
+                  onChange={(e) => handleInputChange('firstName', e.target.value)}
+                  required
+                  placeholder={t('events.registration.form.firstName')}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="lastName" className="flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  {t('events.registration.form.lastName')} *
+                </Label>
+                <Input
+                  id="lastName"
+                  value={registrationForm.lastName}
+                  onChange={(e) => handleInputChange('lastName', e.target.value)}
+                  required
+                  placeholder={t('events.registration.form.lastName')}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="email" className="flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  {t('events.registration.form.email')} *
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={registrationForm.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  required
+                  placeholder={t('events.registration.form.email')}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  {t('events.registration.form.phone')} *
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={registrationForm.phone}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
+                  required
+                  placeholder={t('events.registration.form.phone')}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="company" className="flex items-center gap-2">
+                  <Building className="h-4 w-4" />
+                  {t('events.registration.form.company')}
+                </Label>
+                <Input
+                  id="company"
+                  value={registrationForm.company}
+                  onChange={(e) => handleInputChange('company', e.target.value)}
+                  placeholder={t('events.registration.form.company')}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="position" className="flex items-center gap-2">
+                  <Briefcase className="h-4 w-4" />
+                  {t('events.registration.form.position')}
+                </Label>
+                <Input
+                  id="position"
+                  value={registrationForm.position}
+                  onChange={(e) => handleInputChange('position', e.target.value)}
+                  placeholder={t('events.registration.form.position')}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="dietary" className="flex items-center gap-2">
+                <Utensils className="h-4 w-4" />
+                {t('events.registration.form.dietary')}
+              </Label>
+              <Input
+                id="dietary"
+                value={registrationForm.dietary}
+                onChange={(e) => handleInputChange('dietary', e.target.value)}
+                placeholder={t('events.registration.form.dietaryPlaceholder')}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="notes" className="flex items-center gap-2">
+                <MessageSquare className="h-4 w-4" />
+                {t('events.registration.form.notes')}
+              </Label>
+              <Textarea
+                id="notes"
+                value={registrationForm.notes}
+                onChange={(e) => handleInputChange('notes', e.target.value)}
+                placeholder={t('events.registration.form.notesPlaceholder')}
+                rows={3}
+              />
+            </div>
+
+            <div className="flex gap-3 pt-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setShowRegistrationForm(false)}
+                className="flex-1"
+              >
+                {t('events.registration.form.cancel')}
+              </Button>
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="flex-1"
+              >
+                {isSubmitting ? t('events.registration.form.submit') + '...' : t('events.registration.form.submit')}
+              </Button>
+            </div>
+          </form>
         </DialogContent>
       </Dialog>
 

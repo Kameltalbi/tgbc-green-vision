@@ -139,6 +139,26 @@
     "title": "Événements",
     "upcoming": "Événements à venir",
     "register": "S'inscrire",
+    "registration": {
+      "title": "Inscription à l'événement",
+      "subtitle": "Remplissez le formulaire ci-dessous pour vous inscrire",
+      "form": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "company": "Entreprise/Organisation",
+        "position": "Poste",
+        "dietary": "Restrictions alimentaires",
+        "dietaryPlaceholder": "Végétarien, allergies, etc.",
+        "notes": "Notes additionnelles",
+        "notesPlaceholder": "Questions ou commentaires...",
+        "submit": "Confirmer l'inscription",
+        "cancel": "Annuler"
+      },
+      "success": "Inscription confirmée ! Vous recevrez un email de confirmation.",
+      "error": "Erreur lors de l'inscription. Veuillez réessayer."
+    },
     "months": {
       "january": "Janvier",
       "february": "Février", 

@@ -139,6 +139,26 @@
     "title": "Events",
     "upcoming": "Upcoming Events",
     "register": "Register",
+    "registration": {
+      "title": "Event Registration",
+      "subtitle": "Fill out the form below to register",
+      "form": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "phone": "Phone",
+        "company": "Company/Organization",
+        "position": "Position",
+        "dietary": "Dietary Restrictions",
+        "dietaryPlaceholder": "Vegetarian, allergies, etc.",
+        "notes": "Additional Notes",
+        "notesPlaceholder": "Questions or comments...",
+        "submit": "Confirm Registration",
+        "cancel": "Cancel"
+      },
+      "success": "Registration confirmed! You will receive a confirmation email.",
+      "error": "Error during registration. Please try again."
+    },
     "months": {
       "january": "January",
       "february": "February", 
