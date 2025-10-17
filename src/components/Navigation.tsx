@@ -1,17 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navLinks = [
-    { path: "/", label: "Accueil" },
-    { path: "/events", label: "Événements" },
-    { path: "/about", label: "À propos" },
-    { path: "/membership", label: "Adhésion" },
+    { path: "/about", label: t('nav.about') },
+    { path: "/resources", label: t('nav.resources') },
+    { path: "/events", label: t('nav.events') },
+    { path: "/membership", label: t('nav.membership') },
+    { path: "/contact", label: t('nav.contact') },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -19,19 +23,20 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full bg-card/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-gradient-primary p-2 rounded-lg group-hover:scale-110 transition-transform duration-300">
-              <Leaf className="h-6 w-6 text-white" />
+          <Link to="/" className="flex items-center gap-2">
+            <div className="bg-white p-2 rounded-lg">
+              <img 
+                src="/logo tgbc.png" 
+                alt="Tunisia Green Building Council" 
+                className="h-14 w-auto"
+              />
             </div>
-            <span className="font-display font-bold text-lg text-foreground hidden sm:block">
-              TGBC
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1 ml-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -45,9 +50,21 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+          </div>
+
+          {/* Spacer to push button to the right */}
+          <div className="flex-1"></div>
+
+          {/* Language Switcher */}
+          <div className="hidden md:block mr-4">
+            <LanguageSwitcher />
+          </div>
+
+          {/* Membership Button */}
+          <div className="hidden md:block">
             <Link to="/membership">
-              <Button size="sm" className="ml-4">
-                Devenir membre
+              <Button size="sm">
+                {t('nav.becomeMember')}
               </Button>
             </Link>
           </div>
@@ -78,8 +95,11 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+            <div className="px-4 py-2">
+              <LanguageSwitcher />
+            </div>
             <Link to="/membership" onClick={() => setIsOpen(false)}>
-              <Button className="w-full">Devenir membre</Button>
+              <Button className="w-full">{t('nav.becomeMember')}</Button>
             </Link>
           </div>
         )}

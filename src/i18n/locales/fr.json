@@ -1,0 +1,344 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "events": "Événements",
+    "about": "À propos",
+    "resources": "Ressources",
+    "membership": "Adhésion",
+    "contact": "Contact",
+    "becomeMember": "Devenir membre"
+  },
+  "home": {
+    "hero": {
+      "title": "Construire aujourd'hui, penser demain",
+      "subtitle": "Promouvoir une culture du bâtiment durable en Tunisie",
+      "cta": "Découvrir TGBC"
+    },
+    "why": {
+      "title": "Pourquoi Agir ?",
+      "reason1": "Parce que le secteur du bâtiment représente encore, à lui seul, 40% des émissions mondiales",
+      "reason2": "Parce que les ressources s'épuisent, que les coûts ne cessent d'augmenter et que les risques climatiques s'intensifient.",
+      "question": "Comment décideurs, entreprises et citoyens peuvent-ils agir ensemble pour bâtir des villes et des territoires plus sobres, plus résilients et plus durables ?"
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Promouvoir une culture du bâtiment durable en Tunisie en sensibilisant, formant et accompagnant les acteurs publics et privés vers une transition écologique du secteur. En tant que membre du WorldGBC, nous contribuons à la décarbonation du bâtiment et à l'économie circulaire.",
+      "innovation": "Innovation",
+      "education": "Éducation",
+      "advocacy": "Plaidoyer",
+      "community": "Communauté"
+    },
+    "actions": {
+      "title": "Nos Axes d'Action",
+      "business": {
+        "title": "Axe 1: Entreprises",
+        "description": "Accompagner les entreprises dans leur transition écologique et valoriser les projets durables"
+      },
+      "campus": {
+        "title": "Axe 2: Campus",
+        "description": "Former la prochaine génération aux pratiques de construction durable"
+      },
+      "awareness": {
+        "title": "Axe 3: Sensibilisation",
+        "description": "Éduquer et mobiliser tous les acteurs du secteur du bâtiment"
+      },
+      "advocacy": {
+        "title": "Axe 4: Plaidoyer",
+        "description": "Promouvoir l'intégration du bâtiment durable dans les politiques publiques, encourager les incitations fiscales et réglementaires, renforcer les alliances nationales et internationales"
+      },
+      "innovation": {
+        "title": "Axe 5: Innovation et Startups",
+        "description": "Présenter des solutions locales innovantes pour le bâtiment et l'énergie, offrir un espace de rencontre entre startups, acteurs du bâtiment et décideurs, partager des retours d'expérience concrets sur l'innovation durable en Tunisie"
+      },
+      "certification": {
+        "title": "Axe 6: Certification et Standards",
+        "description": "Développer et promouvoir les certifications de bâtiments durables, établir des standards nationaux, accompagner les projets dans leur démarche de certification LEED, BREEAM et autres labels internationaux"
+      }
+    },
+    "cta": {
+      "title": "Rejoignez le Mouvement",
+      "description": "Devenez membre du TGBC et contribuez à construire un avenir durable pour la Tunisie",
+      "button": "Adhérer au TGBC"
+    }
+  },
+  "about": {
+    "title": "À Propos du TGBC",
+    "subtitle": "Le Tunisia Green Building Council est l'organisation de référence pour la promotion du bâtiment durable en Tunisie",
+    "vision": {
+      "title": "Notre Vision",
+      "description1": "Le TGBC est une organisation indépendante qui rassemble les professionnels du bâtiment, les institutions académiques, les autorités publiques et la société civile autour d'un objectif commun : transformer le secteur de la construction en Tunisie vers plus de durabilité.",
+      "description2": "En tant que membre du World Green Building Council, nous contribuons activement aux objectifs mondiaux de décarbonation et d'adaptation au changement climatique, tout en répondant aux spécificités et aux besoins du contexte tunisien."
+    },
+    "missions": {
+      "title": "Nos Missions",
+      "decarbonation": {
+        "title": "Décarbonation",
+        "description": "Réduire l'empreinte carbone du secteur du bâtiment"
+      },
+      "circular": {
+        "title": "Économie circulaire",
+        "description": "Promouvoir le réemploi et la valorisation des matériaux"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Encourager les solutions technologiques durables"
+      },
+      "education": {
+        "title": "Éducation",
+        "description": "Former les professionnels et les étudiants"
+      },
+      "advocacy": {
+        "title": "Plaidoyer",
+        "description": "Influencer les politiques et réglementations"
+      },
+      "community": {
+        "title": "Communauté",
+        "description": "Fédérer les acteurs du bâtiment durable"
+      }
+    },
+    "team": {
+      "title": "Bureau Exécutif"
+    },
+    "alliances": {
+      "title": "Nos Partenariats Internationaux",
+      "worldgbc": {
+        "name": "WorldGBC",
+        "description": "World Green Building Council"
+      },
+      "mena": {
+        "name": "MENA Green Schools",
+        "description": "Réseau régional d'écoles vertes"
+      },
+      "unesco": {
+        "name": "UNESCO Green Schools",
+        "description": "Programme éducatif mondial"
+      }
+    }
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "footer": {
+    "description": "Membre du WorldGBC - Promouvoir le bâtiment durable en Tunisie",
+    "quickLinks": "Liens rapides",
+    "contact": "Contact",
+    "followUs": "Suivez-nous",
+    "copyright": "Tous droits réservés"
+  },
+  "events": {
+    "title": "Événements",
+    "upcoming": "Événements à venir",
+    "register": "S'inscrire",
+    "months": {
+      "january": "Janvier",
+      "february": "Février", 
+      "march": "Mars",
+      "april": "Avril",
+      "may": "Mai",
+      "june": "Juin",
+      "july": "Juillet",
+      "august": "Août",
+      "september": "Septembre",
+      "october": "Octobre",
+      "november": "Novembre",
+      "december": "Décembre"
+    },
+    "days": {
+      "monday": "Lun",
+      "tuesday": "Mar", 
+      "wednesday": "Mer",
+      "thursday": "Jeu",
+      "friday": "Ven",
+      "saturday": "Sam",
+      "sunday": "Dim"
+    }
+  },
+  "membership": {
+    "title": "Devenez Membre",
+    "subtitle": "Rejoignez la communauté du bâtiment durable en Tunisie et contribuez à construire un avenir plus vert",
+    "benefits": {
+      "title": "Les Avantages",
+      "list": [
+        "Accès aux formations et événements TGBC",
+        "Réseautage avec les professionnels du secteur",
+        "Reconnaissance en tant que membre WorldGBC Network",
+        "Participation aux groupes de travail et initiatives",
+        "Veille réglementaire et technique",
+        "Visibilité sur nos plateformes de communication"
+      ]
+    },
+    "types": {
+      "title": "Types d'Adhésion",
+      "individual": {
+        "title": "Individuelle",
+        "description": "Pour les professionnels engagés dans le bâtiment durable"
+      },
+      "company": {
+        "title": "Entreprise",
+        "description": "Pour les organisations et entreprises du secteur"
+      },
+      "student": {
+        "title": "Étudiant",
+        "description": "Pour les étudiants en architecture, ingénierie et environnement"
+      }
+    },
+    "form": {
+      "title": "Formulaire d'Adhésion",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "company": "Société / Organisation",
+      "position": "Fonction",
+      "email": "Email",
+      "phone": "Téléphone",
+      "membershipType": "Type d'adhésion",
+      "selectType": "Sélectionner un type",
+      "submit": "Devenir Membre",
+      "required": "Veuillez remplir tous les champs obligatoires",
+      "success": "Votre demande d'adhésion a été envoyée avec succès!"
+    },
+    "success": {
+      "title": "Merci de rejoindre TGBC !",
+      "message": "Votre demande d'adhésion a été reçue. Notre équipe vous contactera prochainement pour finaliser votre inscription.",
+      "backToForm": "Retour au formulaire"
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    "backToHome": "Retour à l'accueil"
+  },
+  "resources": {
+    "title": "Ressources",
+    "subtitle": "Découvrez notre bibliothèque de documents, guides et ressources pour le bâtiment durable",
+    "filters": {
+      "title": "Filtrer par"
+    },
+    "categories": {
+      "all": "Toutes",
+      "regulation": "Réglementation",
+      "technical": "Technique",
+      "training": "Formation",
+      "research": "Recherche"
+    },
+    "types": {
+      "all": "Tous",
+      "document": "Document",
+      "video": "Vidéo",
+      "presentation": "Présentation",
+      "guide": "Guide"
+    },
+    "documents": {
+      "greenBuildingGuide": {
+        "title": "Guide du Bâtiment Vert",
+        "description": "Guide complet pour la conception et la construction de bâtiments durables"
+      },
+      "energyEfficiency": {
+        "title": "Efficacité Énergétique",
+        "description": "Réglementation et bonnes pratiques pour l'efficacité énergétique"
+      },
+      "circularEconomy": {
+        "title": "Économie Circulaire",
+        "description": "Présentation sur l'économie circulaire dans le secteur du bâtiment"
+      },
+      "leedCertification": {
+        "title": "Certification LEED",
+        "description": "Guide pour la certification LEED des bâtiments"
+      },
+      "sustainableMaterials": {
+        "title": "Matériaux Durables",
+        "description": "Recherche sur les matériaux de construction durables"
+      },
+      "greenSchools": {
+        "title": "Écoles Vertes",
+        "description": "Vidéo de formation sur le programme Green Schools"
+      }
+    },
+    "download": "Télécharger",
+    "view": "Voir",
+    "empty": {
+      "title": "Aucune ressource trouvée",
+      "description": "Essayez de modifier vos filtres pour voir plus de résultats"
+    },
+    "cta": {
+      "title": "Besoin d'aide ?",
+      "description": "Notre équipe est là pour vous accompagner dans vos projets de bâtiment durable",
+      "button": "Nous contacter"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes là pour vous accompagner dans vos projets de bâtiment durable",
+    "form": {
+      "title": "Envoyez-nous un message",
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "company": "Société",
+      "inquiryType": "Type de demande",
+      "selectType": "Sélectionner un type",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "required": "Veuillez remplir tous les champs obligatoires",
+      "success": "Votre message a été envoyé avec succès !"
+    },
+    "inquiryTypes": {
+      "general": "Demande générale",
+      "membership": "Adhésion",
+      "training": "Formation",
+      "partnership": "Partenariat",
+      "media": "Médias",
+      "other": "Autre"
+    },
+    "info": {
+      "title": "Informations de contact",
+      "email": {
+        "title": "Email",
+        "description": "Réponse sous 24h"
+      },
+      "phone": {
+        "title": "Téléphone",
+        "description": "Lun-Ven 9h-17h"
+      },
+      "address": {
+        "title": "Adresse",
+        "value": "Tunis, Tunisie",
+        "description": "Siège social"
+      },
+      "hours": {
+        "title": "Horaires",
+        "value": "Lun-Ven 9h-17h",
+        "description": "Heures d'ouverture"
+      }
+    },
+    "team": {
+      "title": "Notre équipe",
+      "general": {
+        "name": "Équipe générale",
+        "role": "Information générale",
+        "description": "Pour toutes vos questions générales"
+      },
+      "membership": {
+        "name": "Adhésions",
+        "role": "Responsable adhésions",
+        "description": "Pour devenir membre du TGBC"
+      },
+      "communication": {
+        "name": "Communication",
+        "role": "Responsable communication",
+        "description": "Pour les médias et partenariats"
+      }
+    },
+    "map": {
+      "title": "Notre localisation",
+      "placeholder": "Carte interactive - Tunis, Tunisie"
+    },
+    "success": {
+      "title": "Message envoyé !",
+      "message": "Votre message a été reçu. Notre équipe vous contactera dans les plus brefs délais.",
+      "sendAnother": "Envoyer un autre message"
+    }
+  }
+}

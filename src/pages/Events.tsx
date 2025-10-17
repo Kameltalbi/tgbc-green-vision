@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useTranslation } from "react-i18next";
 
 interface Event {
   id: number;
@@ -19,6 +20,7 @@ interface Event {
 }
 
 const Events = () => {
+  const { t } = useTranslation();
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
@@ -62,8 +64,9 @@ const Events = () => {
   const upcomingEvents = events.slice(0, 3);
 
   const monthNames = [
-    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+    t('events.months.january'), t('events.months.february'), t('events.months.march'), t('events.months.april'), 
+    t('events.months.may'), t('events.months.june'), t('events.months.july'), t('events.months.august'),
+    t('events.months.september'), t('events.months.october'), t('events.months.november'), t('events.months.december')
   ];
 
   const getDaysInMonth = (month: number, year: number) => {
@@ -109,7 +112,7 @@ const Events = () => {
       
       <div className="container mx-auto px-4 py-24">
         <h1 className="font-display text-4xl md:text-5xl font-bold mb-12 text-foreground text-center">
-          Événements
+          {t('events.title')}
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -117,7 +120,7 @@ const Events = () => {
           <div className="lg:col-span-1">
             <Card className="shadow-card border-none sticky top-24">
               <CardContent className="p-6">
-                <h2 className="font-semibold text-xl mb-4 text-foreground">Événements à venir</h2>
+                <h2 className="font-semibold text-xl mb-4 text-foreground">{t('events.upcoming')}</h2>
                 <div className="space-y-4">
                   {upcomingEvents.map((event) => (
                     <div
@@ -156,7 +159,10 @@ const Events = () => {
                 {/* Calendar Grid */}
                 <div className="grid grid-cols-7 gap-2">
                   {/* Day Names */}
-                  {["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"].map((day) => (
+                  {[
+                    t('events.days.monday'), t('events.days.tuesday'), t('events.days.wednesday'), 
+                    t('events.days.thursday'), t('events.days.friday'), t('events.days.saturday'), t('events.days.sunday')
+                  ].map((day) => (
                     <div key={day} className="text-center font-semibold text-sm text-muted-foreground py-2">
                       {day}
                     </div>
@@ -221,7 +227,7 @@ const Events = () => {
               {selectedEvent?.description}
             </p>
             <Button className="w-full" variant="accent">
-              S'inscrire
+              {t('events.register')}
             </Button>
           </div>
         </DialogContent>

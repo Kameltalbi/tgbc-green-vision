@@ -7,6 +7,7 @@ import { CheckCircle2, Users, Building2, GraduationCap } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 import {
   Select,
   SelectContent,
@@ -16,6 +17,7 @@ import {
 } from "@/components/ui/select";
 
 const Membership = () => {
+  const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -27,30 +29,23 @@ const Membership = () => {
     membershipType: "",
   });
 
-  const benefits = [
-    "Accès aux formations et événements TGBC",
-    "Réseautage avec les professionnels du secteur",
-    "Reconnaissance en tant que membre WorldGBC Network",
-    "Participation aux groupes de travail et initiatives",
-    "Veille réglementaire et technique",
-    "Visibilité sur nos plateformes de communication",
-  ];
+  const benefits = t('membership.benefits.list', { returnObjects: true }) as string[];
 
   const membershipTypes = [
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Individuelle",
-      description: "Pour les professionnels engagés dans le bâtiment durable",
+      title: t('membership.types.individual.title'),
+      description: t('membership.types.individual.description'),
     },
     {
       icon: <Building2 className="h-8 w-8" />,
-      title: "Entreprise",
-      description: "Pour les organisations et entreprises du secteur",
+      title: t('membership.types.company.title'),
+      description: t('membership.types.company.description'),
     },
     {
       icon: <GraduationCap className="h-8 w-8" />,
-      title: "Étudiant",
-      description: "Pour les étudiants en architecture, ingénierie et environnement",
+      title: t('membership.types.student.title'),
+      description: t('membership.types.student.description'),
     },
   ];
 
@@ -58,12 +53,12 @@ const Membership = () => {
     e.preventDefault();
     
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.membershipType) {
-      toast.error("Veuillez remplir tous les champs obligatoires");
+      toast.error(t('membership.form.required'));
       return;
     }
 
     setIsSubmitted(true);
-    toast.success("Votre demande d'adhésion a été envoyée avec succès!");
+    toast.success(t('membership.form.success'));
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -81,14 +76,13 @@ const Membership = () => {
                 <CheckCircle2 className="h-12 w-12 text-primary" />
               </div>
               <h2 className="font-display text-3xl font-bold mb-4 text-foreground">
-                Merci de rejoindre TGBC !
+                {t('membership.success.title')}
               </h2>
               <p className="text-muted-foreground mb-8">
-                Votre demande d'adhésion a été reçue. Notre équipe vous contactera prochainement 
-                pour finaliser votre inscription.
+                {t('membership.success.message')}
               </p>
               <Button onClick={() => setIsSubmitted(false)} variant="outline">
-                Retour au formulaire
+                {t('membership.success.backToForm')}
               </Button>
             </CardContent>
           </Card>
@@ -106,18 +100,17 @@ const Membership = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Devenez Membre
+            {t('membership.title')}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Rejoignez la communauté du bâtiment durable en Tunisie et contribuez 
-            à construire un avenir plus vert
+            {t('membership.subtitle')}
           </p>
         </div>
 
         {/* Benefits Section */}
         <section className="mb-16">
           <h2 className="font-display text-3xl font-bold text-center mb-12 text-foreground">
-            Les Avantages
+            {t('membership.benefits.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {benefits.map((benefit, idx) => (
@@ -132,7 +125,7 @@ const Membership = () => {
         {/* Membership Types */}
         <section className="mb-16">
           <h2 className="font-display text-3xl font-bold text-center mb-12 text-foreground">
-            Types d'Adhésion
+            {t('membership.types.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {membershipTypes.map((type, idx) => (
@@ -154,12 +147,12 @@ const Membership = () => {
           <Card className="shadow-elegant border-none">
             <CardContent className="p-8">
               <h2 className="font-display text-2xl font-bold mb-6 text-foreground text-center">
-                Formulaire d'Adhésion
+                {t('membership.form.title')}
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">Prénom *</Label>
+                    <Label htmlFor="firstName">{t('membership.form.firstName')} *</Label>
                     <Input
                       id="firstName"
                       value={formData.firstName}
@@ -168,7 +161,7 @@ const Membership = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Nom *</Label>
+                    <Label htmlFor="lastName">{t('membership.form.lastName')} *</Label>
                     <Input
                       id="lastName"
                       value={formData.lastName}
@@ -179,7 +172,7 @@ const Membership = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="company">Société / Organisation</Label>
+                  <Label htmlFor="company">{t('membership.form.company')}</Label>
                   <Input
                     id="company"
                     value={formData.company}
@@ -188,7 +181,7 @@ const Membership = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="position">Fonction</Label>
+                  <Label htmlFor="position">{t('membership.form.position')}</Label>
                   <Input
                     id="position"
                     value={formData.position}
@@ -198,7 +191,7 @@ const Membership = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email *</Label>
+                    <Label htmlFor="email">{t('membership.form.email')} *</Label>
                     <Input
                       id="email"
                       type="email"
@@ -208,7 +201,7 @@ const Membership = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Téléphone</Label>
+                    <Label htmlFor="phone">{t('membership.form.phone')}</Label>
                     <Input
                       id="phone"
                       type="tel"
@@ -219,24 +212,24 @@ const Membership = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="membershipType">Type d'adhésion *</Label>
+                  <Label htmlFor="membershipType">{t('membership.form.membershipType')} *</Label>
                   <Select
                     value={formData.membershipType}
                     onValueChange={(value) => handleInputChange("membershipType", value)}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Sélectionner un type" />
+                      <SelectValue placeholder={t('membership.form.selectType')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="individual">Individuelle</SelectItem>
-                      <SelectItem value="company">Entreprise</SelectItem>
-                      <SelectItem value="student">Étudiant</SelectItem>
+                      <SelectItem value="individual">{t('membership.types.individual.title')}</SelectItem>
+                      <SelectItem value="company">{t('membership.types.company.title')}</SelectItem>
+                      <SelectItem value="student">{t('membership.types.student.title')}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <Button type="submit" className="w-full" size="lg">
-                  Devenir Membre
+                  {t('membership.form.submit')}
                 </Button>
               </form>
             </CardContent>

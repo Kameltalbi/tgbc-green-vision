@@ -1,0 +1,344 @@
+{
+  "nav": {
+    "home": "Home",
+    "events": "Events",
+    "about": "About",
+    "resources": "Resources",
+    "membership": "Membership",
+    "contact": "Contact",
+    "becomeMember": "Become a member"
+  },
+  "home": {
+    "hero": {
+      "title": "Build today, think tomorrow",
+      "subtitle": "Promoting a culture of sustainable building in Tunisia",
+      "cta": "Discover TGBC"
+    },
+    "why": {
+      "title": "Why Act?",
+      "reason1": "Because the building sector alone still accounts for 40% of global emissions",
+      "reason2": "Because resources are depleting, costs are constantly increasing, and climate risks are intensifying.",
+      "question": "How can decision-makers, businesses, and citizens act together to build cities and territories that are more sober, more resilient, and more sustainable?"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Promote a culture of sustainable building in Tunisia by raising awareness, training and supporting public and private actors towards an ecological transition of the sector. As a member of WorldGBC, we contribute to building decarbonization and the circular economy.",
+      "innovation": "Innovation",
+      "education": "Education",
+      "advocacy": "Advocacy",
+      "community": "Community"
+    },
+    "actions": {
+      "title": "Our Action Areas",
+      "business": {
+        "title": "Axis 1: Business",
+        "description": "Support companies in their ecological transition and promote sustainable projects"
+      },
+      "campus": {
+        "title": "Axis 2: Campus",
+        "description": "Train the next generation in sustainable construction practices"
+      },
+      "awareness": {
+        "title": "Axis 3: Awareness",
+        "description": "Educate and mobilize all actors in the building sector"
+      },
+      "advocacy": {
+        "title": "Axis 4: Advocacy",
+        "description": "Promote the integration of sustainable building into public policies, encourage fiscal and regulatory incentives, strengthen national and international alliances"
+      },
+      "innovation": {
+        "title": "Axis 5: Innovation and Startups",
+        "description": "Present innovative local solutions for building and energy, provide a meeting space between startups, building actors and decision-makers, share concrete feedback on sustainable innovation in Tunisia"
+      },
+      "certification": {
+        "title": "Axis 6: Certification and Standards",
+        "description": "Develop and promote sustainable building certifications, establish national standards, support projects in their LEED, BREEAM and other international certification processes"
+      }
+    },
+    "cta": {
+      "title": "Join the Movement",
+      "description": "Become a TGBC member and contribute to building a sustainable future for Tunisia",
+      "button": "Join TGBC"
+    }
+  },
+  "about": {
+    "title": "About TGBC",
+    "subtitle": "The Tunisia Green Building Council is the reference organization for promoting sustainable building in Tunisia",
+    "vision": {
+      "title": "Our Vision",
+      "description1": "TGBC is an independent organization that brings together building professionals, academic institutions, public authorities and civil society around a common goal: transforming the construction sector in Tunisia towards greater sustainability.",
+      "description2": "As a member of the World Green Building Council, we actively contribute to global decarbonization and climate change adaptation goals, while responding to the specificities and needs of the Tunisian context."
+    },
+    "missions": {
+      "title": "Our Missions",
+      "decarbonation": {
+        "title": "Decarbonization",
+        "description": "Reduce the carbon footprint of the building sector"
+      },
+      "circular": {
+        "title": "Circular Economy",
+        "description": "Promote reuse and valorization of materials"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Encourage sustainable technological solutions"
+      },
+      "education": {
+        "title": "Education",
+        "description": "Train professionals and students"
+      },
+      "advocacy": {
+        "title": "Advocacy",
+        "description": "Influence policies and regulations"
+      },
+      "community": {
+        "title": "Community",
+        "description": "Federate sustainable building actors"
+      }
+    },
+    "team": {
+      "title": "Executive Board"
+    },
+    "alliances": {
+      "title": "Our International Partnerships",
+      "worldgbc": {
+        "name": "WorldGBC",
+        "description": "World Green Building Council"
+      },
+      "mena": {
+        "name": "MENA Green Schools",
+        "description": "Regional green schools network"
+      },
+      "unesco": {
+        "name": "UNESCO Green Schools",
+        "description": "Global educational program"
+      }
+    }
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "footer": {
+    "description": "WorldGBC Member - Promoting sustainable building in Tunisia",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "copyright": "All rights reserved"
+  },
+  "events": {
+    "title": "Events",
+    "upcoming": "Upcoming Events",
+    "register": "Register",
+    "months": {
+      "january": "January",
+      "february": "February", 
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "days": {
+      "monday": "Mon",
+      "tuesday": "Tue", 
+      "wednesday": "Wed",
+      "thursday": "Thu",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun"
+    }
+  },
+  "membership": {
+    "title": "Become a Member",
+    "subtitle": "Join the sustainable building community in Tunisia and help build a greener future",
+    "benefits": {
+      "title": "Benefits",
+      "list": [
+        "Access to TGBC training and events",
+        "Networking with sector professionals",
+        "Recognition as a WorldGBC Network member",
+        "Participation in working groups and initiatives",
+        "Regulatory and technical monitoring",
+        "Visibility on our communication platforms"
+      ]
+    },
+    "types": {
+      "title": "Membership Types",
+      "individual": {
+        "title": "Individual",
+        "description": "For professionals committed to sustainable building"
+      },
+      "company": {
+        "title": "Company",
+        "description": "For organizations and companies in the sector"
+      },
+      "student": {
+        "title": "Student",
+        "description": "For students in architecture, engineering and environment"
+      }
+    },
+    "form": {
+      "title": "Membership Application",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "company": "Company / Organization",
+      "position": "Position",
+      "email": "Email",
+      "phone": "Phone",
+      "membershipType": "Membership Type",
+      "selectType": "Select a type",
+      "submit": "Become a Member",
+      "required": "Please fill in all required fields",
+      "success": "Your membership application has been sent successfully!"
+    },
+    "success": {
+      "title": "Thank you for joining TGBC!",
+      "message": "Your membership application has been received. Our team will contact you shortly to finalize your registration.",
+      "backToForm": "Back to form"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backToHome": "Back to Home"
+  },
+  "resources": {
+    "title": "Resources",
+    "subtitle": "Discover our library of documents, guides and resources for sustainable building",
+    "filters": {
+      "title": "Filter by"
+    },
+    "categories": {
+      "all": "All",
+      "regulation": "Regulation",
+      "technical": "Technical",
+      "training": "Training",
+      "research": "Research"
+    },
+    "types": {
+      "all": "All",
+      "document": "Document",
+      "video": "Video",
+      "presentation": "Presentation",
+      "guide": "Guide"
+    },
+    "documents": {
+      "greenBuildingGuide": {
+        "title": "Green Building Guide",
+        "description": "Complete guide for designing and constructing sustainable buildings"
+      },
+      "energyEfficiency": {
+        "title": "Energy Efficiency",
+        "description": "Regulation and best practices for energy efficiency"
+      },
+      "circularEconomy": {
+        "title": "Circular Economy",
+        "description": "Presentation on circular economy in the building sector"
+      },
+      "leedCertification": {
+        "title": "LEED Certification",
+        "description": "Guide for LEED building certification"
+      },
+      "sustainableMaterials": {
+        "title": "Sustainable Materials",
+        "description": "Research on sustainable construction materials"
+      },
+      "greenSchools": {
+        "title": "Green Schools",
+        "description": "Training video on the Green Schools program"
+      }
+    },
+    "download": "Download",
+    "view": "View",
+    "empty": {
+      "title": "No resources found",
+      "description": "Try adjusting your filters to see more results"
+    },
+    "cta": {
+      "title": "Need help?",
+      "description": "Our team is here to support you in your sustainable building projects",
+      "button": "Contact us"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to support you in your sustainable building projects",
+    "form": {
+      "title": "Send us a message",
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "inquiryType": "Inquiry type",
+      "selectType": "Select a type",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send message",
+      "required": "Please fill in all required fields",
+      "success": "Your message has been sent successfully!"
+    },
+    "inquiryTypes": {
+      "general": "General inquiry",
+      "membership": "Membership",
+      "training": "Training",
+      "partnership": "Partnership",
+      "media": "Media",
+      "other": "Other"
+    },
+    "info": {
+      "title": "Contact information",
+      "email": {
+        "title": "Email",
+        "description": "Response within 24h"
+      },
+      "phone": {
+        "title": "Phone",
+        "description": "Mon-Fri 9am-5pm"
+      },
+      "address": {
+        "title": "Address",
+        "value": "Tunis, Tunisia",
+        "description": "Headquarters"
+      },
+      "hours": {
+        "title": "Hours",
+        "value": "Mon-Fri 9am-5pm",
+        "description": "Opening hours"
+      }
+    },
+    "team": {
+      "title": "Our team",
+      "general": {
+        "name": "General team",
+        "role": "General information",
+        "description": "For all your general questions"
+      },
+      "membership": {
+        "name": "Membership",
+        "role": "Membership manager",
+        "description": "To become a TGBC member"
+      },
+      "communication": {
+        "name": "Communication",
+        "role": "Communication manager",
+        "description": "For media and partnerships"
+      }
+    },
+    "map": {
+      "title": "Our location",
+      "placeholder": "Interactive map - Tunis, Tunisia"
+    },
+    "success": {
+      "title": "Message sent!",
+      "message": "Your message has been received. Our team will contact you shortly.",
+      "sendAnother": "Send another message"
+    }
+  }
+}
