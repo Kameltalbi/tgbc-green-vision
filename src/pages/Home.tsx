@@ -87,6 +87,7 @@ const Home = () => {
         <div className="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-float animate-gentle-move"></div>
         <div className="absolute top-40 right-20 w-6 h-6 bg-white/15 rounded-full animate-float animate-parallax-subtle" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-32 left-20 w-3 h-3 bg-white/25 rounded-full animate-float animate-zoom-subtle" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-60 left-1/2 w-2 h-2 bg-white/30 rounded-full animate-float animate-lake-move" style={{ animationDelay: '3s' }}></div>
       </section>
 
       {/* Pourquoi Section */}
@@ -116,11 +117,11 @@ const Home = () => {
 
             {/* Image à droite */}
             <div className={`${pourquoiVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[30px]'} transition-all duration-800 delay-300 flex justify-center`}>
-              <div className="w-80 h-60 rounded-2xl overflow-hidden shadow-elegant hover-lift animate-gentle-move">
+              <div className="w-80 h-60 rounded-2xl overflow-hidden shadow-elegant hover-lift animate-lake-move">
                 <img 
                   src="/image lac de Tunis.png" 
                   alt="Lac de Tunis" 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 animate-zoom-subtle"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
             </div>
