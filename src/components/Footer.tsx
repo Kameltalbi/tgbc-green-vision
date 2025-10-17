@@ -6,26 +6,26 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-gradient-primary text-white py-12 mt-20">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-gradient-primary text-white py-8 sm:py-12 mt-16 sm:mt-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Logo & About */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="bg-white/10 p-2 rounded-lg">
-                <Leaf className="h-6 w-6" />
+              <div className="bg-white/10 p-1 sm:p-2 rounded-lg">
+                <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
-              <span className="font-display font-bold text-xl">TGBC</span>
+              <span className="font-display font-bold text-lg sm:text-xl">TGBC</span>
             </div>
-            <p className="text-white/80 text-sm">
+            <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
               {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">{t('footer.quickLinks')}</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t('footer.quickLinks')}</h3>
+            <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
               <li>
                 <Link to="/" className="text-white/80 hover:text-white transition-colors">
                   {t('nav.home')}

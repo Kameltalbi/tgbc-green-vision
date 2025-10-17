@@ -61,7 +61,7 @@ const Home = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden mt-16 sm:mt-20">
         <div
           className="absolute inset-0 bg-cover bg-center animate-gentle-move"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -69,55 +69,55 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-hero animate-parallax-subtle"></div>
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in">
             {t('home.hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto animate-fade-in-delay-1">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 max-w-2xl mx-auto px-4 animate-fade-in-delay-1">
             {t('home.hero.subtitle')}
           </p>
           <Link to="/about">
-            <Button variant="hero" size="lg" className="animate-slide-in hover-lift hover-glow">
+            <Button variant="hero" size="lg" className="animate-slide-in hover-lift hover-glow text-sm sm:text-base">
               {t('home.hero.cta')}
             </Button>
           </Link>
         </div>
         
-        {/* Éléments flottants décoratifs */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-float animate-gentle-move"></div>
-        <div className="absolute top-40 right-20 w-6 h-6 bg-white/15 rounded-full animate-float animate-parallax-subtle" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 left-20 w-3 h-3 bg-white/25 rounded-full animate-float animate-zoom-subtle" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-60 left-1/2 w-2 h-2 bg-white/30 rounded-full animate-float animate-lake-move" style={{ animationDelay: '3s' }}></div>
+        {/* Éléments flottants décoratifs - cachés sur mobile */}
+        <div className="hidden sm:block absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-float animate-gentle-move"></div>
+        <div className="hidden sm:block absolute top-40 right-20 w-6 h-6 bg-white/15 rounded-full animate-float animate-parallax-subtle" style={{ animationDelay: '1s' }}></div>
+        <div className="hidden sm:block absolute bottom-32 left-20 w-3 h-3 bg-white/25 rounded-full animate-float animate-zoom-subtle" style={{ animationDelay: '2s' }}></div>
+        <div className="hidden sm:block absolute top-60 left-1/2 w-2 h-2 bg-white/30 rounded-full animate-float animate-lake-move" style={{ animationDelay: '3s' }}></div>
       </section>
 
       {/* Pourquoi Section */}
-      <section ref={pourquoiRef} className={`py-20 bg-gradient-subtle transition-all duration-1000 ${pourquoiVisible ? 'animate' : 'animate-on-scroll'}`}>
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section ref={pourquoiRef} className={`py-12 sm:py-16 lg:py-20 bg-gradient-subtle transition-all duration-1000 ${pourquoiVisible ? 'animate' : 'animate-on-scroll'}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Texte à gauche */}
-            <div className={`${pourquoiVisible ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-30px]'} transition-all duration-800`}>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-foreground">
+            <div className={`${pourquoiVisible ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-30px]'} transition-all duration-800 order-2 lg:order-1`}>
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-foreground">
                 {t('home.why.title')}
               </h2>
               
-              <div className="space-y-6">
-                <p className={`text-lg md:text-xl text-primary leading-relaxed transition-all duration-800 delay-200 ${pourquoiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <div className="space-y-4 sm:space-y-6">
+                <p className={`text-base sm:text-lg lg:text-xl text-primary leading-relaxed transition-all duration-800 delay-200 ${pourquoiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   {t('home.why.reason1')}
                 </p>
                 
-                <p className={`text-lg md:text-xl text-primary leading-relaxed transition-all duration-800 delay-400 ${pourquoiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                <p className={`text-base sm:text-lg lg:text-xl text-primary leading-relaxed transition-all duration-800 delay-400 ${pourquoiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   {t('home.why.reason2')}
                 </p>
                 
-                <p className={`text-lg md:text-xl font-semibold text-accent leading-relaxed transition-all duration-800 delay-600 ${pourquoiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                <p className={`text-base sm:text-lg lg:text-xl font-semibold text-accent leading-relaxed transition-all duration-800 delay-600 ${pourquoiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   {t('home.why.question')}
                 </p>
               </div>
             </div>
 
             {/* Image à droite */}
-            <div className={`${pourquoiVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[30px]'} transition-all duration-800 delay-300 flex justify-center`}>
-              <div className="w-80 h-60 rounded-2xl overflow-hidden shadow-elegant hover-lift animate-lake-move">
+            <div className={`${pourquoiVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[30px]'} transition-all duration-800 delay-300 flex justify-center order-1 lg:order-2`}>
+              <div className="w-full max-w-sm sm:max-w-md lg:w-80 h-48 sm:h-56 lg:h-60 rounded-2xl overflow-hidden shadow-elegant hover-lift animate-lake-move">
                 <img 
                   src="/image lac de Tunis.png" 
                   alt="Lac de Tunis" 
@@ -130,16 +130,16 @@ const Home = () => {
       </section>
 
       {/* Mission Section */}
-      <section ref={missionRef} className={`py-20 container mx-auto px-4 transition-all duration-1000 ${missionVisible ? 'animate' : 'animate-on-scroll'}`}>
+      <section ref={missionRef} className={`py-12 sm:py-16 lg:py-20 container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 ${missionVisible ? 'animate' : 'animate-on-scroll'}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`font-display text-3xl md:text-4xl font-bold mb-6 text-foreground transition-all duration-800 ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h2 className={`font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-foreground transition-all duration-800 ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {t('home.mission.title')}
           </h2>
-          <p className={`text-lg text-muted-foreground leading-relaxed transition-all duration-800 delay-200 ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className={`text-base sm:text-lg text-muted-foreground leading-relaxed transition-all duration-800 delay-200 ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {t('home.mission.description')}
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-12">
             {[
               { icon: <Lightbulb className="h-8 w-8" />, label: t('home.mission.innovation') },
               { icon: <GraduationCap className="h-8 w-8" />, label: t('home.mission.education') },
@@ -158,24 +158,24 @@ const Home = () => {
       </section>
 
       {/* Action Axes Section */}
-      <section ref={actionsRef} className={`py-20 bg-muted/30 transition-all duration-1000 ${actionsVisible ? 'animate' : 'animate-on-scroll'}`}>
-        <div className="container mx-auto px-4">
-          <h2 className={`font-display text-3xl md:text-4xl font-bold text-center mb-12 text-foreground transition-all duration-800 ${actionsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+      <section ref={actionsRef} className={`py-12 sm:py-16 lg:py-20 bg-muted/30 transition-all duration-1000 ${actionsVisible ? 'animate' : 'animate-on-scroll'}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={`font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground transition-all duration-800 ${actionsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {t('home.actions.title')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {actionAxes.map((axis, idx) => (
               <Card 
                 key={idx} 
                 className={`group hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 border-none shadow-card hover-lift hover-glow ${actionsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${idx * 100 + 200}ms` }}
               >
-                <CardContent className="p-6">
-                  <div className={`${axis.color} w-16 h-16 rounded-xl flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform duration-300`}>
+                <CardContent className="p-4 sm:p-6">
+                  <div className={`${axis.color} w-12 h-12 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-3 sm:mb-4 text-primary group-hover:scale-110 transition-transform duration-300`}>
                     {axis.icon}
                   </div>
-                  <h3 className="font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors duration-300">{axis.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{axis.description}</p>
+                  <h3 className="font-semibold text-lg sm:text-xl mb-2 sm:mb-3 text-foreground group-hover:text-primary transition-colors duration-300">{axis.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{axis.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -184,16 +184,16 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef} className={`py-20 container mx-auto px-4 transition-all duration-1000 ${ctaVisible ? 'animate' : 'animate-on-scroll'}`}>
-        <div className={`bg-gradient-primary text-white rounded-3xl p-12 md:p-16 text-center shadow-elegant hover-lift relative overflow-hidden ${ctaVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-800`}>
-          <h2 className={`font-display text-3xl md:text-4xl font-bold mb-6 transition-all duration-800 delay-200 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+      <section ref={ctaRef} className={`py-12 sm:py-16 lg:py-20 container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-1000 ${ctaVisible ? 'animate' : 'animate-on-scroll'}`}>
+        <div className={`bg-gradient-primary text-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 text-center shadow-elegant hover-lift relative overflow-hidden ${ctaVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-800`}>
+          <h2 className={`font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 transition-all duration-800 delay-200 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {t('home.cta.title')}
           </h2>
-          <p className={`text-xl mb-8 text-white/90 max-w-2xl mx-auto transition-all duration-800 delay-400 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className={`text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-white/90 max-w-2xl mx-auto transition-all duration-800 delay-400 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {t('home.cta.description')}
           </p>
           <Link to="/membership">
-            <Button variant="hero" size="lg" className={`hover-glow transition-all duration-800 delay-600 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <Button variant="hero" size="lg" className={`hover-glow transition-all duration-800 delay-600 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} text-sm sm:text-base`}>
               {t('home.cta.button')}
             </Button>
           </Link>
