@@ -43,57 +43,57 @@ const About = () => {
 
   const team = [
     { 
-      name: "Ibtissem BOUATTAY", 
-      role: "Présidente",
-      description: "Ingénieur, adaptation, ESG, SPP/GPP - Point focal Global ABC",
+      name: t('about.team.members.ibtissem.name'), 
+      role: t('about.team.members.ibtissem.role'),
+      description: t('about.team.members.ibtissem.description'),
       image: "/equipe/Ibtissam Bouattay.png"
     },
     { 
-      name: "Abdelmalek GHANEM", 
-      role: "Vice-Président",
-      description: "Universitaire, CEO de l'entreprise SOIB",
+      name: t('about.team.members.abdelmalek.name'), 
+      role: t('about.team.members.abdelmalek.role'),
+      description: t('about.team.members.abdelmalek.description'),
       image: "/equipe/Abdelmalek GHANEM.png"
     },
     { 
-      name: "Raoudha LARBI", 
-      role: "Secrétaire Générale",
-      description: "Architecte, ancienne directrice des bâtiments civils et direction urbanisme MEHAT",
+      name: t('about.team.members.raoudha.name'), 
+      role: t('about.team.members.raoudha.role'),
+      description: t('about.team.members.raoudha.description'),
       image: "/equipe/Raoudha LARBI.png"
     },
     { 
-      name: "Amel SOUISSI TALBI", 
-      role: "Responsable de la communication",
-      description: "Architecte, Fondatrice et directrice de la revue ARCHIBAT",
+      name: t('about.team.members.amel.name'), 
+      role: t('about.team.members.amel.role'),
+      description: t('about.team.members.amel.description'),
       image: "/equipe/amel souissi Talbi.png"
     },
     { 
-      name: "Mohamed El Khames LABIDI", 
-      role: "Trésorier",
-      description: "Architecte, Ancien Pdg AFH, et directeur au MEHAT",
+      name: t('about.team.members.mohamed.name'), 
+      role: t('about.team.members.mohamed.role'),
+      description: t('about.team.members.mohamed.description'),
       image: "/equipe/Mohamed El Khames.png"
     },
     { 
-      name: "Aida SIALA", 
-      role: "Coordinatrice de l'innovation",
-      description: "Architecte, universitaire - Green building",
+      name: t('about.team.members.aida.name'), 
+      role: t('about.team.members.aida.role'),
+      description: t('about.team.members.aida.description'),
       image: "/equipe/Aida SIALA.png"
     },
     { 
-      name: "Emna BCHIR", 
-      role: "Coordinatrice relations internationales",
-      description: "Architecte, Universitaire",
+      name: t('about.team.members.emna.name'), 
+      role: t('about.team.members.emna.role'),
+      description: t('about.team.members.emna.description'),
       image: "/equipe/Emna BCHIR.png"
     },
     { 
-      name: "Halim Hammi", 
-      role: "Responsable des relations universitaires",
-      description: "Ingénieur, universitaire",
+      name: t('about.team.members.halim.name'), 
+      role: t('about.team.members.halim.role'),
+      description: t('about.team.members.halim.description'),
       image: "/equipe/Halim Hammi.png"
     },
     { 
-      name: "Saoussen Lakhdar", 
-      role: "Responsable Programme Green Schools",
-      description: "Universitaire et consultante spécialiste en marketing for good",
+      name: t('about.team.members.saoussen.name'), 
+      role: t('about.team.members.saoussen.role'),
+      description: t('about.team.members.saoussen.description'),
       image: "/equipe/Saoussen Lakhdar.png"
     },
   ];

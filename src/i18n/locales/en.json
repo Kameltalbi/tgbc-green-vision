@@ -105,7 +105,54 @@
       }
     },
     "team": {
-      "title": "Executive Board"
+      "title": "Our Team",
+      "members": {
+        "ibtissem": {
+          "name": "Ibtissem BOUATTAY",
+          "role": "President",
+          "description": "Engineer, adaptation, ESG, SPP/GPP - Global ABC focal point"
+        },
+        "abdelmalek": {
+          "name": "Abdelmalek GHANEM",
+          "role": "Vice-President",
+          "description": "Academic, CEO of SOIB company"
+        },
+        "raoudha": {
+          "name": "Raoudha LARBI",
+          "role": "General Secretary",
+          "description": "Architect, former director of civil buildings and urban planning department MEHAT"
+        },
+        "amel": {
+          "name": "Amel SOUISSI TALBI",
+          "role": "Communication Manager",
+          "description": "Architect, Founder and director of ARCHIBAT magazine"
+        },
+        "mohamed": {
+          "name": "Mohamed El Khames LABIDI",
+          "role": "Treasurer",
+          "description": "Architect, Former CEO AFH, and director at MEHAT"
+        },
+        "aida": {
+          "name": "Aida SIALA",
+          "role": "Innovation Coordinator",
+          "description": "Architect, academic - Green building"
+        },
+        "emna": {
+          "name": "Emna BCHIR",
+          "role": "International Relations Coordinator",
+          "description": "Architect, Academic"
+        },
+        "halim": {
+          "name": "Halim Hammi",
+          "role": "University Relations Manager",
+          "description": "Engineer, academic"
+        },
+        "saoussen": {
+          "name": "Saoussen Lakhdar",
+          "role": "Green Schools Program Manager",
+          "description": "Academic and consultant specialist in marketing for good"
+        }
+      }
     },
     "alliances": {
       "title": "Our International Partnerships",
