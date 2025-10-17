@@ -72,7 +72,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">{t('footer.followUs')}</h3>
             <div className="flex gap-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/tunisia-green-building-council/posts/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-all hover:scale-110"
@@ -80,7 +80,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/TunisiaGBC/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-all hover:scale-110"
