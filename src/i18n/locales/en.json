@@ -382,6 +382,7 @@
       "dashboard": "Dashboard",
       "memberships": "Memberships",
       "resources": "Resources",
+      "events": "Events",
       "content": "Content"
     },
     "dashboard": {
@@ -434,6 +435,38 @@
         "cancel": "Cancel",
         "create": "Create",
         "update": "Update"
+      }
+    },
+    "events": {
+      "title": "Events Management",
+      "add": "Add Event",
+      "edit": "Edit Event",
+      "delete": "Delete Event",
+      "status": "Status",
+      "actions": "Actions",
+      "status": {
+        "draft": "Draft",
+        "published": "Published",
+        "archived": "Archived"
+      },
+      "form": {
+        "title": "Event Title",
+        "description": "Description",
+        "date": "Date",
+        "time": "Time",
+        "location": "Location",
+        "day": "Day",
+        "month": "Month",
+        "year": "Year",
+        "status": "Status",
+        "cancel": "Cancel",
+        "create": "Create",
+        "update": "Update"
+      },
+      "stats": {
+        "totalEvents": "Total Events",
+        "upcomingEvents": "Upcoming Events",
+        "thisMonth": "This Month"
       }
     },
     "content": {

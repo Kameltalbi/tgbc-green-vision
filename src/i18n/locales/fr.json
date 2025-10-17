@@ -382,6 +382,7 @@
       "dashboard": "Tableau de bord",
       "memberships": "Adhésions",
       "resources": "Ressources",
+      "events": "Événements",
       "content": "Contenu"
     },
     "dashboard": {
@@ -434,6 +435,38 @@
         "cancel": "Annuler",
         "create": "Créer",
         "update": "Mettre à jour"
+      }
+    },
+    "events": {
+      "title": "Gestion des événements",
+      "add": "Ajouter un événement",
+      "edit": "Modifier l'événement",
+      "delete": "Supprimer l'événement",
+      "status": "Statut",
+      "actions": "Actions",
+      "status": {
+        "draft": "Brouillon",
+        "published": "Publié",
+        "archived": "Archivé"
+      },
+      "form": {
+        "title": "Titre de l'événement",
+        "description": "Description",
+        "date": "Date",
+        "time": "Heure",
+        "location": "Lieu",
+        "day": "Jour",
+        "month": "Mois",
+        "year": "Année",
+        "status": "Statut",
+        "cancel": "Annuler",
+        "create": "Créer",
+        "update": "Mettre à jour"
+      },
+      "stats": {
+        "totalEvents": "Événements totaux",
+        "upcomingEvents": "Événements à venir",
+        "thisMonth": "Ce mois-ci"
       }
     },
     "content": {

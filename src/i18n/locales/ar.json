@@ -382,6 +382,7 @@
       "dashboard": "لوحة التحكم",
       "memberships": "العضويات",
       "resources": "الموارد",
+      "events": "الأحداث",
       "content": "المحتوى"
     },
     "dashboard": {
@@ -434,6 +435,38 @@
         "cancel": "إلغاء",
         "create": "إنشاء",
         "update": "تحديث"
+      }
+    },
+    "events": {
+      "title": "إدارة الأحداث",
+      "add": "إضافة حدث",
+      "edit": "تعديل الحدث",
+      "delete": "حذف الحدث",
+      "status": "الحالة",
+      "actions": "الإجراءات",
+      "status": {
+        "draft": "مسودة",
+        "published": "منشور",
+        "archived": "مؤرشف"
+      },
+      "form": {
+        "title": "عنوان الحدث",
+        "description": "الوصف",
+        "date": "التاريخ",
+        "time": "الوقت",
+        "location": "المكان",
+        "day": "اليوم",
+        "month": "الشهر",
+        "year": "السنة",
+        "status": "الحالة",
+        "cancel": "إلغاء",
+        "create": "إنشاء",
+        "update": "تحديث"
+      },
+      "stats": {
+        "totalEvents": "إجمالي الأحداث",
+        "upcomingEvents": "الأحداث القادمة",
+        "thisMonth": "هذا الشهر"
       }
     },
     "content": {

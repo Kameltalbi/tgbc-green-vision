@@ -77,15 +77,32 @@ interface Resource {
   status: 'draft' | 'published' | 'archived';
 }
 
+interface Event {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+  location: string;
+  day: number;
+  month: number;
+  year: number;
+  status: 'draft' | 'published' | 'archived';
+  createdAt: string;
+}
+
 const Admin = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'memberships' | 'resources' | 'content'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'memberships' | 'resources' | 'events' | 'content'>('dashboard');
   const [membershipRequests, setMembershipRequests] = useState<MembershipRequest[]>([]);
   const [resources, setResources] = useState<Resource[]>([]);
+  const [events, setEvents] = useState<Event[]>([]);
   const [isResourceDialogOpen, setIsResourceDialogOpen] = useState(false);
+  const [isEventDialogOpen, setIsEventDialogOpen] = useState(false);
   const [editingResource, setEditingResource] = useState<Resource | null>(null);
+  const [editingEvent, setEditingEvent] = useState<Event | null>(null);
 
   // Vérifier l'authentification au chargement
   useEffect(() => {
@@ -137,6 +154,48 @@ const Admin = () => {
         size: "2.5 MB",
         uploadDate: "2024-01-15",
         status: "published"
+      }
+    ]);
+
+    setEvents([
+      {
+        id: 1,
+        title: "World Green Building Week",
+        description: "#BeBoldOnBuildings - Une semaine dédiée au bâtiment durable avec conférences, ateliers et visites de sites exemplaires",
+        date: "8-12 Septembre 2025",
+        time: "09:00 - 18:00",
+        location: "Tunis",
+        day: 8,
+        month: 8,
+        year: 2025,
+        status: "published",
+        createdAt: "2024-01-15"
+      },
+      {
+        id: 2,
+        title: "Conférence Économie Circulaire",
+        description: "Découvrez comment l'économie circulaire transforme le secteur du bâtiment en Tunisie",
+        date: "15 Octobre 2025",
+        time: "14:00 - 17:00",
+        location: "Sfax",
+        day: 15,
+        month: 9,
+        year: 2025,
+        status: "published",
+        createdAt: "2024-01-10"
+      },
+      {
+        id: 3,
+        title: "Formation Green Campus & Schools",
+        description: "Formation pratique pour les responsables d'établissements scolaires et universitaires",
+        date: "22 Novembre 2025",
+        time: "09:00 - 16:00",
+        location: "Sousse",
+        day: 22,
+        month: 10,
+        year: 2025,
+        status: "draft",
+        createdAt: "2024-01-05"
       }
     ]);
   }, []);
@@ -282,10 +341,11 @@ const Admin = () => {
         <div className="mb-8">
           <div className="flex space-x-1 bg-muted p-1 rounded-lg w-fit">
             {[
-              { id: 'dashboard', label: t('admin.tabs.dashboard'), icon: <BarChart3 className="h-4 w-4" /> },
-              { id: 'memberships', label: t('admin.tabs.memberships'), icon: <Users className="h-4 w-4" /> },
-              { id: 'resources', label: t('admin.tabs.resources'), icon: <FileText className="h-4 w-4" /> },
-              { id: 'content', label: t('admin.tabs.content'), icon: <Settings className="h-4 w-4" /> }
+            { id: 'dashboard', label: t('admin.tabs.dashboard'), icon: <BarChart3 className="h-4 w-4" /> },
+            { id: 'memberships', label: t('admin.tabs.memberships'), icon: <Users className="h-4 w-4" /> },
+            { id: 'resources', label: t('admin.tabs.resources'), icon: <FileText className="h-4 w-4" /> },
+            { id: 'events', label: t('admin.tabs.events'), icon: <Calendar className="h-4 w-4" /> },
+            { id: 'content', label: t('admin.tabs.content'), icon: <Settings className="h-4 w-4" /> }
             ].map((tab) => (
               <Button
                 key={tab.id}
