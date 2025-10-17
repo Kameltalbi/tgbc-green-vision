@@ -162,10 +162,25 @@ All colors MUST be HSL.
   .animate-stagger:nth-child(5) { animation-delay: 0.5s; }
   .animate-stagger:nth-child(6) { animation-delay: 0.6s; }
 
-  /* Animation de parallaxe */
-  .animate-parallax {
-    animation: parallax 20s linear infinite;
-  }
+/* Animation de parallaxe subtile */
+.animate-parallax-subtle {
+  animation: parallaxSubtle 20s ease-in-out infinite;
+}
+
+/* Animation de mouvement doux */
+.animate-gentle-move {
+  animation: gentleMove 15s ease-in-out infinite;
+}
+
+/* Animation de zoom léger */
+.animate-zoom-subtle {
+  animation: zoomSubtle 25s ease-in-out infinite;
+}
+
+/* Animation de rotation très douce */
+.animate-rotate-gentle {
+  animation: rotateGentle 30s linear infinite;
+}
 
   /* Animation de rotation douce */
   .animate-rotate-slow {
@@ -264,12 +279,48 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes parallax {
+@keyframes parallaxSubtle {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-2px) translateY(-1px);
+  }
+  50% {
+    transform: translateX(0) translateY(-2px);
+  }
+  75% {
+    transform: translateX(2px) translateY(-1px);
+  }
+}
+
+@keyframes gentleMove {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  33% {
+    transform: translateX(-1px) scale(1.001);
+  }
+  66% {
+    transform: translateX(1px) scale(1.001);
+  }
+}
+
+@keyframes zoomSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes rotateGentle {
   0% {
-    transform: translateX(0);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translateX(-100%);
+    transform: rotate(360deg);
   }
 }
 
