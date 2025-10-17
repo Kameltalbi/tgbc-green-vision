@@ -62,12 +62,14 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden mt-16 sm:mt-20">
+        {/* Image de fond avec animation */}
         <div
           className="absolute inset-0 bg-cover bg-center animate-gentle-move"
           style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-hero animate-parallax-subtle"></div>
-        </div>
+        ></div>
+        
+        {/* Overlay fixe qui couvre toute la section */}
+        <div className="absolute inset-0 bg-gradient-hero"></div>
         
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in">
