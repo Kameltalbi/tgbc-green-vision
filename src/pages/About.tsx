@@ -39,10 +39,51 @@ const About = () => {
   ];
 
   const team = [
-    { name: "Dr. Ahmed Ben Salem", role: "Président" },
-    { name: "Fatma Trabelsi", role: "Vice-Présidente" },
-    { name: "Mohamed Gharbi", role: "Secrétaire Général" },
-    { name: "Leila Mansour", role: "Trésorière" },
+    { 
+      name: "Ibtissem BOUATTAY", 
+      role: "Présidente",
+      description: "Ingénieur, adaptation, ESG, SPP/GPP - Point focal Global ABC"
+    },
+    { 
+      name: "Abdelmalek GHANEM", 
+      role: "Vice-Président",
+      description: "Universitaire, CEO de l'entreprise SOIB"
+    },
+    { 
+      name: "Raoudha LARBI", 
+      role: "Secrétaire Générale",
+      description: "Architecte, ancienne directrice des bâtiments civils et direction urbanisme MEHAT"
+    },
+    { 
+      name: "Amel SOUISSI TALBI", 
+      role: "Responsable de la communication",
+      description: "Architecte, Fondatrice et directrice de la revue ARCHIBAT"
+    },
+    { 
+      name: "Mohamed El Khames LABIDI", 
+      role: "Trésorier",
+      description: "Architecte, Ancien Pdg AFH, et directeur au MEHAT"
+    },
+    { 
+      name: "Aida SIALA", 
+      role: "Coordinatrice de l'innovation",
+      description: "Architecte, universitaire - Green building"
+    },
+    { 
+      name: "Emna BCHIR", 
+      role: "Coordinatrice relations internationales",
+      description: "Architecte, Universitaire"
+    },
+    { 
+      name: "Halim Hammi", 
+      role: "Responsable des relations universitaires",
+      description: "Ingénieur, universitaire"
+    },
+    { 
+      name: "Saoussen Lakhdar", 
+      role: "Responsable Programme Green Schools",
+      description: "Universitaire et consultante spécialiste en marketing for good"
+    },
   ];
 
   const alliances = [
@@ -117,7 +158,7 @@ const About = () => {
             <h2 className="font-display text-3xl font-bold text-center mb-12 text-foreground">
               Bureau Exécutif
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {team.map((member, idx) => (
                 <Card key={idx} className="text-center border-none shadow-card hover:shadow-elegant transition-all">
                   <CardContent className="p-6">
@@ -125,7 +166,8 @@ const About = () => {
                       <Users className="h-12 w-12 text-white" />
                     </div>
                     <h3 className="font-semibold text-lg text-foreground">{member.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{member.role}</p>
+                    <p className="text-sm text-primary font-medium mt-1">{member.role}</p>
+                    <p className="text-xs text-muted-foreground mt-2">{member.description}</p>
                   </CardContent>
                 </Card>
               ))}
