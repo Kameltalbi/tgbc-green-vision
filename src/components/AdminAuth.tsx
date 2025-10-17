@@ -3,9 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Lock, Eye, EyeOff } from "lucide-react";
+import { Lock, Eye, EyeOff, Home } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 interface AdminAuthProps {
   onAuthSuccess: () => void;
@@ -102,6 +103,17 @@ const AdminAuth = ({ onAuthSuccess }: AdminAuthProps) => {
             >
               {isLoading ? t('admin.auth.loading') : t('admin.auth.login')}
             </Button>
+            
+            {/* Lien de retour vers la page d'accueil */}
+            <div className="mt-4 text-center">
+              <Link 
+                to="/" 
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                <Home className="h-4 w-4" />
+                {t('admin.auth.backToHome')}
+              </Link>
+            </div>
           </form>
           <div className="mt-6 p-4 bg-muted/50 rounded-lg">
             <p className="text-sm text-muted-foreground text-center">

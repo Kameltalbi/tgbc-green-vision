@@ -437,7 +437,8 @@
       "success": "Connexion réussie !",
       "error": "Identifiants incorrects",
       "demo": "Compte de démonstration",
-      "logout": "Se déconnecter"
+      "logout": "Se déconnecter",
+      "backToHome": "Retour à l'accueil"
     }
   }
 }

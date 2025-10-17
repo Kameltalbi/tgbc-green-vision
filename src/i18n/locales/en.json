@@ -437,7 +437,8 @@
       "success": "Login successful!",
       "error": "Invalid credentials",
       "demo": "Demo account",
-      "logout": "Logout"
+      "logout": "Logout",
+      "backToHome": "Back to Home"
     }
   }
 }
