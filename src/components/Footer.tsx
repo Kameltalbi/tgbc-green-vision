@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="bg-white/10 p-1 sm:p-2 rounded-lg">
                 <Leaf className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
-              <span className="font-display font-bold text-lg sm:text-xl">TGBC</span>
+              <span className="font-display font-bold text-lg sm:text-xl">TunisiaGBC</span>
             </div>
             <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
               {t('footer.description')}

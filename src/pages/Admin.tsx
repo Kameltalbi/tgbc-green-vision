@@ -606,7 +606,7 @@ const Admin = () => {
               <CardContent className="space-y-4">
                 <div>
                   <Label htmlFor="about-title">{t('admin.content.aboutTitle')}</Label>
-                  <Input id="about-title" defaultValue="À propos du TGBC" />
+                  <Input id="about-title" defaultValue="À propos du TunisiaGBC" />
                 </div>
                 <div>
                   <Label htmlFor="about-description">{t('admin.content.aboutDescription')}</Label>

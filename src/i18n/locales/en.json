@@ -13,7 +13,7 @@
     "hero": {
       "title": "Build today, think tomorrow",
       "subtitle": "Promoting a culture of sustainable building in Tunisia",
-      "cta": "Discover TGBC"
+      "cta": "Discover TunisiaGBC"
     },
     "why": {
       "title": "Why Act?",
@@ -58,12 +58,12 @@
     },
     "cta": {
       "title": "Join the Movement",
-      "description": "Become a TGBC member and contribute to building a sustainable future for Tunisia",
-      "button": "Join TGBC"
+      "description": "Become a TunisiaGBC member and contribute to building a sustainable future for Tunisia",
+      "button": "Join TunisiaGBC"
     }
   },
   "about": {
-    "title": "About TGBC",
+    "title": "About TunisiaGBC",
     "subtitle": "The Tunisia Green Building Council is the reference organization for promoting sustainable building in Tunisia",
     "introduction": {
       "title": "Who are we?",
@@ -74,7 +74,7 @@
     },
     "vision": {
       "title": "Our Vision",
-      "description1": "TGBC is an independent organization that brings together building professionals, academic institutions, public authorities and civil society around a common goal: transforming the construction sector in Tunisia towards greater sustainability.",
+      "description1": "TunisiaGBC is an independent organization that brings together building professionals, academic institutions, public authorities and civil society around a common goal: transforming the construction sector in Tunisia towards greater sustainability.",
       "description2": "As a member of the World Green Building Council, we actively contribute to global decarbonization and climate change adaptation goals, while responding to the specificities and needs of the Tunisian context."
     },
     "missions": {
@@ -236,7 +236,7 @@
     "benefits": {
       "title": "Benefits",
       "list": [
-        "Access to TGBC training and events",
+        "Access to TunisiaGBC training and events",
         "Networking with sector professionals",
         "Recognition as a WorldGBC Network member",
         "Participation in working groups and initiatives",
@@ -274,7 +274,7 @@
       "success": "Your membership application has been sent successfully!"
     },
     "success": {
-      "title": "Thank you for joining TGBC!",
+      "title": "Thank you for joining TunisiaGBC!",
       "message": "Your membership application has been received. Our team will contact you shortly to finalize your registration.",
       "backToForm": "Back to form"
     }
@@ -398,7 +398,7 @@
       "membership": {
         "name": "Membership",
         "role": "Membership manager",
-        "description": "To become a TGBC member"
+        "description": "To become a TunisiaGBC member"
       },
       "communication": {
         "name": "Communication",

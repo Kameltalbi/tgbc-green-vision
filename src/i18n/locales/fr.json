@@ -13,7 +13,7 @@
     "hero": {
       "title": "Construire aujourd'hui, penser demain",
       "subtitle": "Promouvoir une culture du bâtiment durable en Tunisie",
-      "cta": "Découvrir TGBC"
+      "cta": "Découvrir TunisiaGBC"
     },
     "why": {
       "title": "Pourquoi Agir ?",
@@ -58,12 +58,12 @@
     },
     "cta": {
       "title": "Rejoignez le Mouvement",
-      "description": "Devenez membre du TGBC et contribuez à construire un avenir durable pour la Tunisie",
-      "button": "Adhérer au TGBC"
+      "description": "Devenez membre du TunisiaGBC et contribuez à construire un avenir durable pour la Tunisie",
+      "button": "Adhérer au TunisiaGBC"
     }
   },
   "about": {
-    "title": "À Propos du TGBC",
+    "title": "À Propos du TunisiaGBC",
     "subtitle": "Le Tunisia Green Building Council est l'organisation de référence pour la promotion du bâtiment durable en Tunisie",
     "introduction": {
       "title": "Qui sommes-nous ?",
@@ -74,7 +74,7 @@
     },
     "vision": {
       "title": "Notre Vision",
-      "description1": "Le TGBC est une organisation indépendante qui rassemble les professionnels du bâtiment, les institutions académiques, les autorités publiques et la société civile autour d'un objectif commun : transformer le secteur de la construction en Tunisie vers plus de durabilité.",
+      "description1": "Le TunisiaGBC est une organisation indépendante qui rassemble les professionnels du bâtiment, les institutions académiques, les autorités publiques et la société civile autour d'un objectif commun : transformer le secteur de la construction en Tunisie vers plus de durabilité.",
       "description2": "En tant que membre du World Green Building Council, nous contribuons activement aux objectifs mondiaux de décarbonation et d'adaptation au changement climatique, tout en répondant aux spécificités et aux besoins du contexte tunisien."
     },
     "missions": {
@@ -236,7 +236,7 @@
     "benefits": {
       "title": "Les Avantages",
       "list": [
-        "Accès aux formations et événements TGBC",
+        "Accès aux formations et événements TunisiaGBC",
         "Réseautage avec les professionnels du secteur",
         "Reconnaissance en tant que membre WorldGBC Network",
         "Participation aux groupes de travail et initiatives",
@@ -274,7 +274,7 @@
       "success": "Votre demande d'adhésion a été envoyée avec succès!"
     },
     "success": {
-      "title": "Merci de rejoindre TGBC !",
+      "title": "Merci de rejoindre TunisiaGBC !",
       "message": "Votre demande d'adhésion a été reçue. Notre équipe vous contactera prochainement pour finaliser votre inscription.",
       "backToForm": "Retour au formulaire"
     }
@@ -398,7 +398,7 @@
       "membership": {
         "name": "Adhésions",
         "role": "Responsable adhésions",
-        "description": "Pour devenir membre du TGBC"
+        "description": "Pour devenir membre du TunisiaGBC"
       },
       "communication": {
         "name": "Communication",
