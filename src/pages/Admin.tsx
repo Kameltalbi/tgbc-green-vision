@@ -27,6 +27,7 @@ import Footer from "@/components/Footer";
 import AdminAuth from "@/components/AdminAuth";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 import {
   Select,
   SelectContent,
@@ -78,6 +79,7 @@ interface Resource {
 
 const Admin = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState<'dashboard' | 'memberships' | 'resources' | 'content'>('dashboard');
   const [membershipRequests, setMembershipRequests] = useState<MembershipRequest[]>([]);
@@ -92,17 +94,6 @@ const Admin = () => {
       setIsAuthenticated(true);
     }
   }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("adminAuth");
-    setIsAuthenticated(false);
-    toast.success(t('admin.auth.logout'));
-  };
-
-  // Si pas authentifié, afficher le formulaire de connexion
-  if (!isAuthenticated) {
-    return <AdminAuth onAuthSuccess={() => setIsAuthenticated(true)} />;
-  }
 
   // Mock data - En production, cela viendrait d'une API
   useEffect(() => {
@@ -149,6 +140,18 @@ const Admin = () => {
       }
     ]);
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("adminAuth");
+    setIsAuthenticated(false);
+    toast.success(t('admin.auth.logout'));
+    navigate('/');
+  };
+
+  // Si pas authentifié, afficher le formulaire de connexion
+  if (!isAuthenticated) {
+    return <AdminAuth onAuthSuccess={() => setIsAuthenticated(true)} />;
+  }
 
   const handleMembershipAction = (id: number, action: 'approve' | 'reject') => {
     setMembershipRequests(prev => 
