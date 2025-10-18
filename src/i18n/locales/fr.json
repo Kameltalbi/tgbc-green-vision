@@ -964,6 +964,19 @@
       "subtitle": "Recevez nos derniers articles directement dans votre boîte mail",
       "emailPlaceholder": "Votre adresse email",
       "subscribe": "S'abonner"
+    },
+    "article": {
+      "backToBlog": "Retour au blog",
+      "share": "Partager",
+      "like": "J'aime",
+      "comment": "Commenter",
+      "articleNotFound": "Article non trouvé",
+      "articleNotFoundDescription": "L'article que vous recherchez n'existe pas.",
+      "loading": "Chargement de l'article...",
+      "views": "vues",
+      "likes": "likes",
+      "comments": "commentaires",
+      "readTime": "min de lecture"
     }
   }
 }

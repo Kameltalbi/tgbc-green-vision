@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { 
   BookOpen, 
   Calendar, 
@@ -381,10 +382,12 @@ const Blog: React.FC = () => {
                       </div>
 
                       {/* Read More Button */}
-                      <Button variant="outline" className="w-full group">
-                        {t('blog.readMore')}
-                        <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      <Link to={`/blog/${post.id}`}>
+                        <Button variant="outline" className="w-full group">
+                          {t('blog.readMore')}
+                          <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
