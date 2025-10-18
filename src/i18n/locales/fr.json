@@ -494,12 +494,12 @@
         "published": "Publié",
         "archived": "Archivé"
       },
-        "types": {
-          "document": "Document",
-          "guide": "Guide", 
-          "template": "Modèle",
-          "report": "Rapport"
-        },
+      "types": {
+        "document": "Document",
+        "guide": "Guide", 
+        "template": "Modèle",
+        "report": "Rapport"
+      },
       "stats": {
         "total": "Total",
         "published": "Publiées",
@@ -588,13 +588,13 @@
       "status": {
         "cancelled": "Annulé"
       },
-        "types": {
-          "conference": "Conférence",
-          "workshop": "Atelier",
-          "webinar": "Webinaire",
-          "meeting": "Réunion",
-          "training": "Formation"
-        },
+      "types": {
+        "conference": "Conférence",
+        "workshop": "Atelier",
+        "webinar": "Webinaire",
+        "meeting": "Réunion",
+        "training": "Formation"
+      },
       "stats": {
         "total": "Total",
         "upcoming": "À Venir",
