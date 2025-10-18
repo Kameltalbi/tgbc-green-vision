@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BookOpen, Eye, MessageSquare, ThumbsUp } from 'lucide-react';
 import ContentManager, { ContentItem } from '../components/ContentManager';
-import ContentForm from '../components/ContentForm';
+import BlogForm from '../components/BlogForm';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -240,93 +240,6 @@ const BlogManager: React.FC = () => {
     }
   ];
 
-  const formFields = [
-    {
-      key: 'title',
-      label: t('admin.blog.form.title'),
-      type: 'text' as const,
-      required: true,
-      placeholder: t('admin.blog.form.titlePlaceholder')
-    },
-    {
-      key: 'excerpt',
-      label: t('admin.blog.form.excerpt'),
-      type: 'textarea' as const,
-      required: true,
-      placeholder: t('admin.blog.form.excerptPlaceholder')
-    },
-    {
-      key: 'content',
-      label: t('admin.blog.form.content'),
-      type: 'textarea' as const,
-      required: true,
-      placeholder: t('admin.blog.form.contentPlaceholder')
-    },
-    {
-      key: 'author',
-      label: t('admin.blog.form.author'),
-      type: 'text' as const,
-      required: true,
-      placeholder: t('admin.blog.form.authorPlaceholder')
-    },
-    {
-      key: 'featuredImage',
-      label: t('admin.blog.form.featuredImage'),
-      type: 'text' as const,
-      placeholder: t('admin.blog.form.featuredImagePlaceholder')
-    },
-    {
-      key: 'category',
-      label: t('admin.blog.form.category'),
-      type: 'text' as const,
-      placeholder: t('admin.blog.form.categoryPlaceholder')
-    },
-    {
-      key: 'language',
-      label: t('admin.blog.form.language'),
-      type: 'select' as const,
-      required: true,
-      options: [
-        { value: 'fr', label: 'Français' },
-        { value: 'en', label: 'English' },
-        { value: 'ar', label: 'العربية' }
-      ]
-    },
-    {
-      key: 'status',
-      label: t('admin.blog.form.status'),
-      type: 'select' as const,
-      required: true,
-      options: [
-        { value: 'published', label: t('admin.status.published') },
-        { value: 'draft', label: t('admin.status.draft') },
-        { value: 'archived', label: t('admin.status.archived') }
-      ]
-    },
-    {
-      key: 'seoTitle',
-      label: t('admin.blog.form.seoTitle'),
-      type: 'text' as const,
-      placeholder: t('admin.blog.form.seoTitlePlaceholder')
-    },
-    {
-      key: 'seoDescription',
-      label: t('admin.blog.form.seoDescription'),
-      type: 'textarea' as const,
-      placeholder: t('admin.blog.form.seoDescriptionPlaceholder')
-    },
-    {
-      key: 'tags',
-      label: t('admin.blog.form.tags'),
-      type: 'tags' as const,
-      placeholder: t('admin.blog.form.tagsPlaceholder')
-    },
-    {
-      key: 'images',
-      label: t('admin.blog.form.images'),
-      type: 'images' as const
-    }
-  ];
 
   const publishedPosts = posts.filter(p => p.status === 'published');
   const draftPosts = posts.filter(p => p.status === 'draft');
@@ -396,16 +309,14 @@ const BlogManager: React.FC = () => {
       />
 
       {/* Form Dialog */}
-      <ContentForm
+      <BlogForm
+        post={editingPost}
         isOpen={isFormOpen}
         onClose={() => {
           setIsFormOpen(false);
           setEditingPost(null);
         }}
         onSave={handleSave}
-        item={editingPost}
-        title={editingPost ? t('admin.blog.editTitle') : t('admin.blog.addTitle')}
-        fields={formFields}
       />
     </div>
   );
