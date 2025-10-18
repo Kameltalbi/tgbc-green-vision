@@ -540,6 +540,7 @@
         },
         "tags": "Tags",
         "tagsPlaceholder": "Ajouter des tags",
+        "addTag": "Ajouter un Tag",
         "cancel": "Annuler",
         "create": "Créer",
         "update": "Mettre à jour"
@@ -638,6 +639,7 @@
         },
         "tags": "Tags",
         "tagsPlaceholder": "Ajouter des tags",
+        "addTag": "Ajouter un Tag",
         "submit": "Soumettre",
         "cancel": "Annuler"
       },
@@ -707,6 +709,7 @@
         "seoDescriptionPlaceholder": "Description pour les moteurs de recherche",
         "tags": "Tags",
         "tagsPlaceholder": "Ajouter des tags",
+        "addTag": "Ajouter un Tag",
         "images": "Images de l'Article"
       },
       "images": {
