@@ -1,4 +1,5 @@
-import { initializeDatabase, createSampleData, migrateBlogPosts } from './lib/migration';
+import 'dotenv/config';
+import { initializeDatabase, createSampleData, migrateBlogPosts } from '../src/lib/migration';
 
 // Script de test et d'initialisation
 async function main() {
@@ -34,6 +35,4 @@ async function main() {
 }
 
 // Exécuter le script
-if (require.main === module) {
-  main();
-}
+main().catch(console.error);

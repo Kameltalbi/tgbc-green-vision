@@ -1,0 +1,28 @@
+# Configuration du serveur Express
+NODE_ENV=development
+PORT=3001
+
+# Configuration PostgreSQL
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=tunisiagbc
+DB_USER=postgres
+DB_PASSWORD=votre_mot_de_passe
+
+# URLs de l'application
+FRONTEND_URL=http://localhost:5173
+API_URL=http://localhost:3001
+
+# Configuration CORS
+CORS_ORIGIN=http://localhost:5173
+
+# Configuration de sécurité
+JWT_SECRET=votre_jwt_secret_ici
+SESSION_SECRET=votre_session_secret_ici
+
+# Configuration des fichiers
+MAX_FILE_SIZE=10mb
+UPLOAD_DIR=uploads
+
+# Configuration des logs
+LOG_LEVEL=info
