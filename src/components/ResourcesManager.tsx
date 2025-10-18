@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FileText, Download, ExternalLink } from 'lucide-react';
 import ContentManager, { ContentItem } from '../components/ContentManager';
-import ContentForm from '../components/ContentForm';
+import ResourceForm from '../components/ResourceForm';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -13,6 +13,16 @@ interface Resource extends ContentItem {
   fileSize?: string;
   downloadCount?: number;
   language: string;
+  images?: Array<{
+    id: string;
+    url: string;
+    alt: string;
+    width: number;
+    height: number;
+    position: number;
+    caption?: string;
+  }>;
+  imageDisplay: 'single' | 'carousel' | 'gallery';
 }
 
 const ResourcesManager: React.FC = () => {
@@ -42,7 +52,28 @@ const ResourcesManager: React.FC = () => {
           updatedAt: '2024-01-15T10:00:00Z',
           fileUrl: '/resources/guide-leed.pdf',
           fileSize: '2.5 MB',
-          downloadCount: 156
+          downloadCount: 156,
+          images: [
+            {
+              id: 'img1',
+              url: '/images/resources/leed-guide-cover.jpg',
+              alt: 'Couverture du Guide LEED',
+              width: 800,
+              height: 600,
+              position: 1,
+              caption: 'Guide complet de certification LEED'
+            },
+            {
+              id: 'img2',
+              url: '/images/resources/leed-process.jpg',
+              alt: 'Processus de certification LEED',
+              width: 800,
+              height: 500,
+              position: 2,
+              caption: 'Étapes du processus de certification'
+            }
+          ],
+          imageDisplay: 'carousel'
         },
         {
           id: '2',
@@ -57,7 +88,19 @@ const ResourcesManager: React.FC = () => {
           updatedAt: '2024-01-10T14:30:00Z',
           fileUrl: '/resources/template-audit.docx',
           fileSize: '1.2 MB',
-          downloadCount: 89
+          downloadCount: 89,
+          images: [
+            {
+              id: 'img3',
+              url: '/images/resources/audit-template.jpg',
+              alt: 'Template de rapport d\'audit',
+              width: 600,
+              height: 400,
+              position: 1,
+              caption: 'Modèle de rapport d\'audit énergétique'
+            }
+          ],
+          imageDisplay: 'single'
         }
       ];
       setResources(mockResources);
@@ -301,16 +344,14 @@ const ResourcesManager: React.FC = () => {
       />
 
       {/* Form Dialog */}
-      <ContentForm
+      <ResourceForm
+        resource={editingResource}
         isOpen={isFormOpen}
         onClose={() => {
           setIsFormOpen(false);
           setEditingResource(null);
         }}
         onSave={handleSave}
-        item={editingResource}
-        title={editingResource ? t('admin.resources.editTitle') : t('admin.resources.addTitle')}
-        fields={formFields}
       />
     </div>
   );

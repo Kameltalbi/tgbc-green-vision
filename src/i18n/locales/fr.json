@@ -523,12 +523,42 @@
         "fileUrl": "URL du Fichier",
         "fileUrlPlaceholder": "/resources/fichier.pdf",
         "fileSize": "Taille du Fichier",
+        "images": "Images",
+        "imageDisplay": "Affichage des Images",
         "status": "Statut",
         "tags": "Tags",
         "tagsPlaceholder": "Ajouter des tags",
         "cancel": "Annuler",
         "create": "Créer",
         "update": "Mettre à jour"
+      },
+      "images": {
+        "title": "Images",
+        "add": "Ajouter une Image",
+        "edit": "Modifier l'Image",
+        "delete": "Supprimer l'Image",
+        "noImages": "Aucune Image",
+        "noImagesDescription": "Ajoutez des images pour illustrer votre ressource",
+        "addFirst": "Ajouter la Première Image",
+        "url": "URL de l'Image",
+        "alt": "Texte Alternatif",
+        "position": "Position",
+        "caption": "Légende",
+        "preview": "Aperçu",
+        "width": "Largeur (px)",
+        "height": "Hauteur (px)",
+        "urlPlaceholder": "https://example.com/image.jpg",
+        "altPlaceholder": "Description de l'image",
+        "captionPlaceholder": "Légende optionnelle"
+      },
+      "imageDisplay": {
+        "title": "Mode d'Affichage",
+        "single": "Image Unique",
+        "singleDescription": "Afficher une seule image principale",
+        "carousel": "Carrousel",
+        "carouselDescription": "Défilement automatique des images",
+        "gallery": "Galerie",
+        "galleryDescription": "Grille d'images cliquables"
       }
     },
     "events": {
@@ -586,6 +616,34 @@
         "tagsPlaceholder": "Ajouter des tags",
         "submit": "Soumettre",
         "cancel": "Annuler"
+      },
+      "images": {
+        "title": "Images",
+        "add": "Ajouter une Image",
+        "edit": "Modifier l'Image",
+        "delete": "Supprimer l'Image",
+        "noImages": "Aucune Image",
+        "noImagesDescription": "Ajoutez des images pour illustrer votre événement",
+        "addFirst": "Ajouter la Première Image",
+        "url": "URL de l'Image",
+        "alt": "Texte Alternatif",
+        "position": "Position",
+        "caption": "Légende",
+        "preview": "Aperçu",
+        "width": "Largeur (px)",
+        "height": "Hauteur (px)",
+        "urlPlaceholder": "https://example.com/image.jpg",
+        "altPlaceholder": "Description de l'image",
+        "captionPlaceholder": "Légende optionnelle"
+      },
+      "imageDisplay": {
+        "title": "Mode d'Affichage",
+        "single": "Image Unique",
+        "singleDescription": "Afficher une seule image principale",
+        "carousel": "Carrousel",
+        "carouselDescription": "Défilement automatique des images",
+        "gallery": "Galerie",
+        "galleryDescription": "Grille d'images cliquables"
       }
     },
     "blog": {

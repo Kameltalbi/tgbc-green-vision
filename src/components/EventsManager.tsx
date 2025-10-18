@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Calendar, Users, MapPin, Clock } from 'lucide-react';
 import ContentManager, { ContentItem } from '../components/ContentManager';
-import ContentForm from '../components/ContentForm';
+import EventForm from '../components/EventForm';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -17,6 +17,16 @@ interface Event extends ContentItem {
   currency?: string;
   type: 'conference' | 'workshop' | 'webinar' | 'meeting' | 'training';
   status: 'published' | 'draft' | 'archived' | 'cancelled';
+  images?: Array<{
+    id: string;
+    url: string;
+    alt: string;
+    width: number;
+    height: number;
+    position: number;
+    caption?: string;
+  }>;
+  imageDisplay: 'single' | 'carousel' | 'gallery';
 }
 
 const EventsManager: React.FC = () => {
@@ -49,6 +59,27 @@ const EventsManager: React.FC = () => {
           currentAttendees: 156,
           price: 150,
           currency: 'TND',
+          images: [
+            {
+              id: 'img1',
+              url: '/images/events/conference-2024.jpg',
+              alt: 'Conférence Bâtiment Durable 2024',
+              width: 1200,
+              height: 800,
+              position: 1,
+              caption: 'Salle de conférence principale'
+            },
+            {
+              id: 'img2',
+              url: '/images/events/speakers-panel.jpg',
+              alt: 'Panel d\'experts',
+              width: 1200,
+              height: 600,
+              position: 2,
+              caption: 'Panel d\'experts en construction durable'
+            }
+          ],
+          imageDisplay: 'carousel',
           createdAt: '2024-01-10T10:00:00Z',
           updatedAt: '2024-01-10T10:00:00Z'
         },
