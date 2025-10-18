@@ -625,6 +625,8 @@
         "locationPlaceholder": "Entrez le lieu de l'événement",
         "maxAttendees": "Participants Maximum",
         "maxAttendeesPlaceholder": "Nombre maximum de participants",
+        "registrationUrl": "URL d'Inscription",
+        "registrationUrlPlaceholder": "https://example.com/register",
         "price": "Prix",
         "pricePlaceholder": "Prix de l'événement",
         "currency": "Devise",
