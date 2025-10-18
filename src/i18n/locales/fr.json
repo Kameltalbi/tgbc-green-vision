@@ -494,12 +494,12 @@
         "published": "Publié",
         "archived": "Archivé"
       },
-      "types": {
-        "document": "Document",
-        "guide": "Guide",
-        "template": "Modèle",
-        "report": "Rapport"
-      },
+        "types": {
+          "document": "Document",
+          "guide": "Guide", 
+          "template": "Modèle",
+          "report": "Rapport"
+        },
       "stats": {
         "total": "Total",
         "published": "Publiées",
@@ -517,15 +517,27 @@
         "description": "Description",
         "descriptionPlaceholder": "Décrivez la ressource",
         "type": "Type",
+        "types": {
+          "document": "Document",
+          "guide": "Guide",
+          "template": "Modèle",
+          "report": "Rapport"
+        },
         "category": "Catégorie",
         "categoryPlaceholder": "e.g., Certification, Audit",
         "language": "Langue",
         "fileUrl": "URL du Fichier",
         "fileUrlPlaceholder": "/resources/fichier.pdf",
         "fileSize": "Taille du Fichier",
+        "fileSizePlaceholder": "2.5 MB",
         "images": "Images",
         "imageDisplay": "Affichage des Images",
         "status": "Statut",
+        "statuses": {
+          "draft": "Brouillon",
+          "published": "Publié",
+          "archived": "Archivé"
+        },
         "tags": "Tags",
         "tagsPlaceholder": "Ajouter des tags",
         "cancel": "Annuler",
@@ -575,13 +587,13 @@
       "status": {
         "cancelled": "Annulé"
       },
-      "types": {
-        "conference": "Conférence",
-        "workshop": "Atelier",
-        "webinar": "Webinaire",
-        "meeting": "Réunion",
-        "training": "Formation"
-      },
+        "types": {
+          "conference": "Conférence",
+          "workshop": "Atelier",
+          "webinar": "Webinaire",
+          "meeting": "Réunion",
+          "training": "Formation"
+        },
       "stats": {
         "total": "Total",
         "upcoming": "À Venir",
@@ -599,6 +611,13 @@
         "description": "Description",
         "descriptionPlaceholder": "Décrivez l'événement",
         "type": "Type",
+        "types": {
+          "conference": "Conférence",
+          "workshop": "Atelier",
+          "webinar": "Webinaire",
+          "meeting": "Réunion",
+          "training": "Formation"
+        },
         "startDate": "Date de Début",
         "endDate": "Date de Fin",
         "location": "Lieu",
@@ -612,6 +631,11 @@
         "categoryPlaceholder": "e.g., Conférence, Formation",
         "language": "Langue",
         "status": "Statut",
+        "statuses": {
+          "draft": "Brouillon",
+          "published": "Publié",
+          "cancelled": "Annulé"
+        },
         "tags": "Tags",
         "tagsPlaceholder": "Ajouter des tags",
         "submit": "Soumettre",
