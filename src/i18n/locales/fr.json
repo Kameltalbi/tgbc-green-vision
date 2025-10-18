@@ -735,6 +735,31 @@
         "start": "Début",
         "middle": "Milieu",
         "end": "Fin"
+      },
+      "public": {
+        "title": "Blog",
+        "subtitle": "Découvrez les dernières actualités, guides et insights sur la construction durable",
+        "searchPlaceholder": "Rechercher des articles...",
+        "filterByCategory": "Filtrer par catégorie",
+        "filterByTag": "Filtrer par tag",
+        "sortBy": "Trier par",
+        "allCategories": "Toutes les catégories",
+        "allTags": "Tous les tags",
+        "sortOptions": {
+          "newest": "Plus récent",
+          "oldest": "Plus ancien",
+          "mostViewed": "Plus vus",
+          "mostLiked": "Plus aimés"
+        },
+        "noPosts": "Aucun article trouvé",
+        "noPostsDescription": "Essayez de modifier vos critères de recherche",
+        "readMore": "Lire la suite",
+        "newsletter": {
+          "title": "Restez informé",
+          "subtitle": "Recevez nos derniers articles directement dans votre boîte mail",
+          "emailPlaceholder": "Votre adresse email",
+          "subscribe": "S'abonner"
+        }
       }
     },
     "content": {
@@ -890,54 +915,5 @@
       "blog": "Blog",
       "members": "Membres",
       "analytics": "Analytiques",
-      "settings": "Paramètres",
-      "logout": "Se déconnecter"
-    },
-    "header": {
-      "subtitle": "Panneau d'administration complet",
-      "online": "En ligne"
-    },
-    "status": {
-      "published": "Publié",
-      "draft": "Brouillon",
-      "archived": "Archivé"
-    },
-    "search": {
-      "placeholder": "Rechercher..."
-    },
-    "filter": {
-      "all": "Tous"
-    },
-    "confirm": {
-      "deleteTitle": "Confirmer la Suppression",
-      "deleteMessage": "Êtes-vous sûr de vouloir supprimer \"{{title}}\" ? Cette action est irréversible."
-    },
-    "form": {
-      "addTag": "Ajouter un tag"
-    }
-  },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "Découvrez les dernières actualités, guides et insights sur la construction durable",
-    "searchPlaceholder": "Rechercher des articles...",
-    "filterByCategory": "Filtrer par catégorie",
-    "filterByTag": "Filtrer par tag",
-    "sortBy": "Trier par",
-    "allCategories": "Toutes les catégories",
-    "allTags": "Tous les tags",
-    "sortOptions": {
-      "newest": "Plus récent",
-      "oldest": "Plus ancien",
-      "mostViewed": "Plus vus",
-      "mostLiked": "Plus aimés"
-    },
-    "noPosts": "Aucun article trouvé",
-    "noPostsDescription": "Essayez de modifier vos critères de recherche",
-    "readMore": "Lire la suite",
-    "newsletter": {
-      "title": "Restez informé",
-      "subtitle": "Recevez nos derniers articles directement dans votre boîte mail",
-      "emailPlaceholder": "Votre adresse email",
-      "subscribe": "S'abonner"
-    }
   }
+}

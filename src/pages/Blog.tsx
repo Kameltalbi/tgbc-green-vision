@@ -221,11 +221,11 @@ const Blog: React.FC = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <BookOpen className="h-8 w-8 sm:h-10 sm:w-10" />
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-                {t('blog.title')}
+                {t('admin.admin.blog.public.public.title')}
               </h1>
             </div>
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
-              {t('blog.subtitle')}
+              {t('admin.admin.blog.public.public.subtitle')}
             </p>
           </div>
         </div>
@@ -240,7 +240,7 @@ const Blog: React.FC = () => {
               <div className="relative flex-1 sm:max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
-                  placeholder={t('blog.searchPlaceholder')}
+                  placeholder={t('admin.admin.blog.public.public.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -250,12 +250,12 @@ const Blog: React.FC = () => {
               {/* Category Filter */}
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                 <SelectTrigger className="w-full sm:w-48">
-                  <SelectValue placeholder={t('blog.filterByCategory')} />
+                  <SelectValue placeholder={t('admin.blog.public.filterByCategory')} />
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map(category => (
                     <SelectItem key={category} value={category}>
-                      {category === 'all' ? t('blog.allCategories') : category}
+                      {category === 'all' ? t('admin.blog.public.allCategories') : category}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -264,12 +264,12 @@ const Blog: React.FC = () => {
               {/* Tag Filter */}
               <Select value={selectedTag} onValueChange={setSelectedTag}>
                 <SelectTrigger className="w-full sm:w-48">
-                  <SelectValue placeholder={t('blog.filterByTag')} />
+                  <SelectValue placeholder={t('admin.blog.public.filterByTag')} />
                 </SelectTrigger>
                 <SelectContent>
                   {tags.map(tag => (
                     <SelectItem key={tag} value={tag}>
-                      {tag === 'all' ? t('blog.allTags') : tag}
+                      {tag === 'all' ? t('admin.blog.public.allTags') : tag}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -279,13 +279,13 @@ const Blog: React.FC = () => {
             {/* Sort */}
             <Select value={sortBy} onValueChange={setSortBy}>
               <SelectTrigger className="w-full sm:w-48">
-                <SelectValue placeholder={t('blog.sortBy')} />
+                <SelectValue placeholder={t('admin.blog.public.sortBy')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="newest">{t('blog.sortOptions.newest')}</SelectItem>
-                <SelectItem value="oldest">{t('blog.sortOptions.oldest')}</SelectItem>
-                <SelectItem value="mostViewed">{t('blog.sortOptions.mostViewed')}</SelectItem>
-                <SelectItem value="mostLiked">{t('blog.sortOptions.mostLiked')}</SelectItem>
+                <SelectItem value="newest">{t('admin.blog.public.sortOptions.newest')}</SelectItem>
+                <SelectItem value="oldest">{t('admin.blog.public.sortOptions.oldest')}</SelectItem>
+                <SelectItem value="mostViewed">{t('admin.blog.public.sortOptions.mostViewed')}</SelectItem>
+                <SelectItem value="mostLiked">{t('admin.blog.public.sortOptions.mostLiked')}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -299,10 +299,10 @@ const Blog: React.FC = () => {
             <div className="text-center py-12">
               <BookOpen className="h-16 w-16 mx-auto text-gray-400 mb-4" />
               <h3 className="text-xl font-medium text-gray-900 mb-2">
-                {t('blog.noPosts')}
+                {t('admin.blog.public.noPosts')}
               </h3>
               <p className="text-gray-500">
-                {t('blog.noPostsDescription')}
+                {t('admin.blog.public.noPostsDescription')}
               </p>
             </div>
           ) : (
@@ -382,7 +382,7 @@ const Blog: React.FC = () => {
 
                       {/* Read More Button */}
                       <Button variant="outline" className="w-full group">
-                        {t('blog.readMore')}
+                        {t('admin.blog.public.readMore')}
                         <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </div>
@@ -399,18 +399,18 @@ const Blog: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              {t('blog.newsletter.title')}
+              {t('admin.blog.public.newsletter.title')}
             </h2>
             <p className="text-lg text-white/90 mb-6">
-              {t('blog.newsletter.subtitle')}
+              {t('admin.blog.public.newsletter.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input
-                placeholder={t('blog.newsletter.emailPlaceholder')}
+                placeholder={t('admin.blog.public.newsletter.emailPlaceholder')}
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
               />
               <Button variant="secondary" className="whitespace-nowrap">
-                {t('blog.newsletter.subscribe')}
+                {t('admin.blog.public.newsletter.subscribe')}
               </Button>
             </div>
           </div>
