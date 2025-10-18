@@ -7,7 +7,8 @@ import {
   Eye, 
   Search,
   Filter,
-  MoreHorizontal
+  MoreHorizontal,
+  FileText
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';

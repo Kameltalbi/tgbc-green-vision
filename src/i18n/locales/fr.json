@@ -624,7 +624,29 @@
         "seoDescription": "Description SEO",
         "seoDescriptionPlaceholder": "Description pour les moteurs de recherche",
         "tags": "Tags",
-        "tagsPlaceholder": "Ajouter des tags"
+        "tagsPlaceholder": "Ajouter des tags",
+        "images": "Images de l'Article"
+      },
+      "images": {
+        "title": "Gestion des Images",
+        "add": "Ajouter une Image",
+        "edit": "Modifier l'Image",
+        "noImages": "Aucune image",
+        "noImagesDescription": "Ajoutez des images pour enrichir votre article",
+        "addFirst": "Ajouter la Première Image",
+        "url": "URL de l'Image",
+        "urlPlaceholder": "https://example.com/image.jpg",
+        "alt": "Texte Alternatif",
+        "altPlaceholder": "Description de l'image pour l'accessibilité",
+        "position": "Position dans l'Article",
+        "caption": "Légende",
+        "captionPlaceholder": "Légende optionnelle de l'image",
+        "preview": "Aperçu"
+      },
+      "imagePosition": {
+        "start": "Début",
+        "middle": "Milieu",
+        "end": "Fin"
       }
     },
     "content": {

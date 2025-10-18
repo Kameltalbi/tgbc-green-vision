@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
 import { Badge } from '../components/ui/badge';
 import { ContentItem } from './ContentManager';
+import ImageManager from './ImageManager';
 
 interface ContentFormProps {
   isOpen: boolean;
@@ -151,6 +152,14 @@ const ContentForm: React.FC<ContentFormProps> = ({
               ))}
             </div>
           </div>
+        );
+
+      case 'images':
+        return (
+          <ImageManager
+            images={formData.images || []}
+            onImagesChange={(images) => handleInputChange(field.key, images)}
+          />
         );
 
       default:

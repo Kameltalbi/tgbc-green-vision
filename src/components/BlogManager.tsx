@@ -12,6 +12,13 @@ interface BlogPost extends ContentItem {
   excerpt: string;
   author: string;
   featuredImage?: string;
+  images?: Array<{
+    id: string;
+    url: string;
+    alt: string;
+    position: 'start' | 'middle' | 'end';
+    caption?: string;
+  }>;
   readTime?: number;
   views?: number;
   likes?: number;
@@ -48,6 +55,29 @@ const BlogManager: React.FC = () => {
           language: 'fr',
           tags: ['Construction', 'Durable', 'Innovation', 'Tunisie'],
           featuredImage: '/images/blog/construction-durable.jpg',
+          images: [
+            {
+              id: 'img1',
+              url: '/images/blog/construction-durable-hero.jpg',
+              alt: 'Bâtiment durable moderne en Tunisie',
+              position: 'start',
+              caption: 'Exemple de bâtiment durable en Tunisie'
+            },
+            {
+              id: 'img2',
+              url: '/images/blog/technologies-vertes.jpg',
+              alt: 'Technologies vertes pour le bâtiment',
+              position: 'middle',
+              caption: 'Nouvelles technologies pour l\'efficacité énergétique'
+            },
+            {
+              id: 'img3',
+              url: '/images/blog/futur-construction.jpg',
+              alt: 'Vision du futur de la construction',
+              position: 'end',
+              caption: 'Le futur de la construction durable'
+            }
+          ],
           readTime: 8,
           views: 1245,
           likes: 89,
@@ -70,6 +100,22 @@ const BlogManager: React.FC = () => {
           language: 'fr',
           tags: ['LEED', 'Certification', 'Guide', 'Pratique'],
           featuredImage: '/images/blog/leed-certification.jpg',
+          images: [
+            {
+              id: 'img4',
+              url: '/images/blog/leed-process.jpg',
+              alt: 'Processus de certification LEED',
+              position: 'start',
+              caption: 'Les étapes du processus de certification LEED'
+            },
+            {
+              id: 'img5',
+              url: '/images/blog/leed-benefits.jpg',
+              alt: 'Avantages de la certification LEED',
+              position: 'middle',
+              caption: 'Les bénéfices économiques et environnementaux'
+            }
+          ],
           readTime: 12,
           views: 892,
           likes: 67,
@@ -274,6 +320,11 @@ const BlogManager: React.FC = () => {
       label: t('admin.blog.form.tags'),
       type: 'tags' as const,
       placeholder: t('admin.blog.form.tagsPlaceholder')
+    },
+    {
+      key: 'images',
+      label: t('admin.blog.form.images'),
+      type: 'images' as const
     }
   ];
 
