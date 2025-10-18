@@ -60,8 +60,8 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-white/80">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:contact@tgbc.tn" className="hover:text-white transition-colors">
-                  contact@tgbc.tn
+                <a href="mailto:contact@tunisiagbc.org" className="hover:text-white transition-colors">
+                  contact@tunisiagbc.org
                 </a>
               </li>
             </ul>
