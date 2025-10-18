@@ -791,8 +791,94 @@
     },
     "settings": {
       "title": "Paramètres",
-      "comingSoon": "Bientôt Disponible",
-      "description": "Les paramètres avancés seront disponibles prochainement"
+      "subtitle": "Gestion des paramètres du site et de l'administration",
+      "tabs": {
+        "general": "Général",
+        "contact": "Contact",
+        "notifications": "Notifications",
+        "security": "Sécurité",
+        "appearance": "Apparence",
+        "backup": "Sauvegarde"
+      },
+      "general": {
+        "title": "Paramètres Généraux",
+        "siteName": "Nom du Site",
+        "siteDescription": "Description du Site",
+        "defaultLanguage": "Langue par Défaut",
+        "timezone": "Fuseau Horaire",
+        "maintenanceMode": "Mode Maintenance",
+        "maintenanceModeDescription": "Activer le mode maintenance pour les visiteurs"
+      },
+      "contact": {
+        "title": "Informations de Contact",
+        "email": "Email",
+        "phone": "Téléphone",
+        "address": "Adresse",
+        "socialMedia": "Réseaux Sociaux"
+      },
+      "notifications": {
+        "title": "Paramètres de Notification",
+        "emailNotifications": "Notifications Email",
+        "emailNotificationsDescription": "Recevoir des notifications par email",
+        "adminNotifications": "Notifications Admin",
+        "adminNotificationsDescription": "Notifications pour les administrateurs",
+        "userNotifications": "Notifications Utilisateur",
+        "userNotificationsDescription": "Notifications pour les utilisateurs",
+        "newsletterEnabled": "Newsletter Activée",
+        "newsletterEnabledDescription": "Permettre l'inscription à la newsletter"
+      },
+      "security": {
+        "title": "Paramètres de Sécurité",
+        "sessionTimeout": "Délai d'Expiration de Session (minutes)",
+        "sessionTimeoutDescription": "Durée avant expiration automatique de la session",
+        "passwordPolicy": "Politique de Mot de Passe",
+        "passwordPolicyDescription": "Exiger des mots de passe complexes",
+        "twoFactorAuth": "Authentification à Deux Facteurs",
+        "twoFactorAuthDescription": "Activer l'authentification à deux facteurs"
+      },
+      "appearance": {
+        "title": "Paramètres d'Apparence",
+        "theme": "Thème",
+        "themes": {
+          "light": "Clair",
+          "dark": "Sombre",
+          "auto": "Automatique"
+        },
+        "primaryColor": "Couleur Principale",
+        "logoUrl": "URL du Logo",
+        "faviconUrl": "URL du Favicon"
+      },
+      "backup": {
+        "title": "Sauvegarde et Restauration",
+        "autoBackup": "Sauvegarde Automatique",
+        "autoBackupDescription": "Effectuer des sauvegardes automatiques",
+        "backupFrequency": "Fréquence de Sauvegarde",
+        "frequencies": {
+          "daily": "Quotidienne",
+          "weekly": "Hebdomadaire",
+          "monthly": "Mensuelle"
+        },
+        "retentionDays": "Jours de Rétention",
+        "lastBackup": "Dernière Sauvegarde",
+        "status": {
+          "completed": "Terminée",
+          "failed": "Échouée",
+          "inProgress": "En Cours"
+        },
+        "createBackup": "Créer une Sauvegarde",
+        "restoreBackup": "Restaurer une Sauvegarde"
+      },
+      "save": "Sauvegarder",
+      "saving": "Sauvegarde...",
+      "saveSuccess": "Paramètres sauvegardés avec succès",
+      "saveError": "Erreur lors de la sauvegarde",
+      "reset": "Réinitialiser",
+      "resetSuccess": "Paramètres réinitialisés",
+      "export": "Exporter",
+      "exportSuccess": "Paramètres exportés avec succès",
+      "import": "Importer",
+      "importSuccess": "Paramètres importés avec succès",
+      "importError": "Erreur lors de l'importation"
     },
     "sidebar": {
       "title": "Administration",
