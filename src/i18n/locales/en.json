@@ -440,7 +440,17 @@
     },
     "actions": {
       "manageMembers": "Manage members",
-      "addResource": "Add resource"
+      "addResource": "Add resource",
+      "addEvent": "Add Event",
+      "editContent": "Edit Content",
+      "addNew": "Add New",
+      "addFirst": "Add First",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "create": "Create",
+      "update": "Update"
     },
     "memberships": {
       "title": "Membership management",

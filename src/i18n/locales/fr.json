@@ -433,18 +433,39 @@
       "content": "Contenu"
     },
     "dashboard": {
-      "recentActivity": "Activité récente",
+      "recentActivity": "Activité Récente",
       "newMember": "Nouveau membre inscrit",
       "newResource": "Nouvelle ressource ajoutée",
-      "quickActions": "Actions rapides"
+      "newEvent": "Nouvel événement créé",
+      "quickActions": "Actions Rapides",
+      "manageMembers": "Gérer les Membres",
+      "manageResources": "Gérer les Ressources",
+      "manageEvents": "Gérer les Événements",
+      "manageBlog": "Gérer le Blog",
+      "stats": {
+        "totalMembers": "Membres Totaux",
+        "pendingRequests": "Demandes en Attente",
+        "totalResources": "Ressources Totales",
+        "totalEvents": "Événements Totaux"
+      }
     },
     "actions": {
       "manageMembers": "Gérer les membres",
-      "addResource": "Ajouter une ressource"
+      "addResource": "Ajouter une ressource",
+      "addEvent": "Ajouter Événement",
+      "editContent": "Modifier Contenu",
+      "addNew": "Ajouter Nouveau",
+      "addFirst": "Ajouter le Premier",
+      "view": "Voir",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "cancel": "Annuler",
+      "create": "Créer",
+      "update": "Mettre à jour"
     },
-    "memberships": {
-      "title": "Gestion des adhésions",
-      "pending": "en attente",
+    "members": {
+      "title": "Gestion des Membres",
+      "pending": "En Attente",
       "name": "Nom",
       "email": "Email",
       "company": "Entreprise",
@@ -452,33 +473,59 @@
       "status": "Statut",
       "actions": "Actions",
       "status": {
-        "pending": "En attente",
-        "approved": "Approuvée",
-        "rejected": "Rejetée"
+        "pending": "En Attente",
+        "approved": "Approuvé",
+        "rejected": "Rejeté"
       }
     },
     "resources": {
       "title": "Gestion des ressources",
-      "add": "Ajouter une ressource",
-      "edit": "Modifier la ressource",
+      "addTitle": "Ajouter une Ressource",
+      "editTitle": "Modifier la Ressource",
+      "add": "Ajouter Ressource",
+      "edit": "Modifier Ressource",
       "type": "Type",
       "category": "Catégorie",
       "status": "Statut",
       "actions": "Actions",
+      "searchPlaceholder": "Rechercher des ressources...",
       "status": {
         "draft": "Brouillon",
-        "published": "Publiée",
-        "archived": "Archivée"
+        "published": "Publié",
+        "archived": "Archivé"
+      },
+      "types": {
+        "document": "Document",
+        "guide": "Guide",
+        "template": "Modèle",
+        "report": "Rapport"
+      },
+      "stats": {
+        "total": "Total",
+        "published": "Publiées",
+        "drafts": "Brouillons",
+        "downloads": "Téléchargements"
+      },
+      "columns": {
+        "title": "Titre",
+        "type": "Type",
+        "downloads": "Téléchargements"
       },
       "form": {
         "title": "Titre",
+        "titlePlaceholder": "Entrez le titre de la ressource",
         "description": "Description",
-        "type": "Type de ressource",
+        "descriptionPlaceholder": "Décrivez la ressource",
+        "type": "Type",
         "category": "Catégorie",
+        "categoryPlaceholder": "e.g., Certification, Audit",
         "language": "Langue",
+        "fileUrl": "URL du Fichier",
+        "fileUrlPlaceholder": "/resources/fichier.pdf",
+        "fileSize": "Taille du Fichier",
         "status": "Statut",
-        "file": "Fichier",
-        "upload": "Télécharger",
+        "tags": "Tags",
+        "tagsPlaceholder": "Ajouter des tags",
         "cancel": "Annuler",
         "create": "Créer",
         "update": "Mettre à jour"
@@ -486,34 +533,98 @@
     },
     "events": {
       "title": "Gestion des événements",
-      "add": "Ajouter un événement",
-      "edit": "Modifier l'événement",
-      "delete": "Supprimer l'événement",
+      "addTitle": "Ajouter un Événement",
+      "editTitle": "Modifier l'Événement",
+      "add": "Ajouter Événement",
+      "edit": "Modifier Événement",
+      "delete": "Supprimer Événement",
       "status": "Statut",
       "actions": "Actions",
+      "free": "Gratuit",
+      "searchPlaceholder": "Rechercher des événements...",
       "status": {
-        "draft": "Brouillon",
-        "published": "Publié",
-        "archived": "Archivé"
+        "cancelled": "Annulé"
       },
-      "form": {
-        "title": "Titre de l'événement",
-        "description": "Description",
-        "date": "Date",
-        "time": "Heure",
-        "location": "Lieu",
-        "day": "Jour",
-        "month": "Mois",
-        "year": "Année",
-        "status": "Statut",
-        "cancel": "Annuler",
-        "create": "Créer",
-        "update": "Mettre à jour"
+      "types": {
+        "conference": "Conférence",
+        "workshop": "Atelier",
+        "webinar": "Webinaire",
+        "meeting": "Réunion",
+        "training": "Formation"
       },
       "stats": {
-        "totalEvents": "Événements totaux",
-        "upcomingEvents": "Événements à venir",
-        "thisMonth": "Ce mois-ci"
+        "total": "Total",
+        "upcoming": "À Venir",
+        "past": "Passés",
+        "attendees": "Participants"
+      },
+      "columns": {
+        "title": "Titre",
+        "date": "Date",
+        "attendees": "Participants"
+      },
+      "form": {
+        "title": "Titre",
+        "titlePlaceholder": "Entrez le titre de l'événement",
+        "description": "Description",
+        "descriptionPlaceholder": "Décrivez l'événement",
+        "type": "Type",
+        "startDate": "Date de Début",
+        "endDate": "Date de Fin",
+        "location": "Lieu",
+        "locationPlaceholder": "Entrez le lieu de l'événement",
+        "maxAttendees": "Participants Maximum",
+        "maxAttendeesPlaceholder": "Nombre maximum de participants",
+        "price": "Prix",
+        "pricePlaceholder": "Prix de l'événement",
+        "currency": "Devise",
+        "category": "Catégorie",
+        "categoryPlaceholder": "e.g., Conférence, Formation",
+        "language": "Langue",
+        "status": "Statut",
+        "tags": "Tags",
+        "tagsPlaceholder": "Ajouter des tags",
+        "submit": "Soumettre",
+        "cancel": "Annuler"
+      }
+    },
+    "blog": {
+      "title": "Gestion du Blog",
+      "addTitle": "Ajouter un Article",
+      "editTitle": "Modifier l'Article",
+      "searchPlaceholder": "Rechercher des articles...",
+      "stats": {
+        "total": "Total",
+        "published": "Publiés",
+        "views": "Vues",
+        "likes": "Likes"
+      },
+      "columns": {
+        "title": "Titre",
+        "author": "Auteur",
+        "stats": "Statistiques"
+      },
+      "form": {
+        "title": "Titre",
+        "titlePlaceholder": "Entrez le titre de l'article",
+        "excerpt": "Extrait",
+        "excerptPlaceholder": "Court résumé de l'article",
+        "content": "Contenu",
+        "contentPlaceholder": "Contenu complet de l'article",
+        "author": "Auteur",
+        "authorPlaceholder": "Nom de l'auteur",
+        "featuredImage": "Image Principale",
+        "featuredImagePlaceholder": "URL de l'image principale",
+        "category": "Catégorie",
+        "categoryPlaceholder": "e.g., Innovation, Certification",
+        "language": "Langue",
+        "status": "Statut",
+        "seoTitle": "Titre SEO",
+        "seoTitlePlaceholder": "Titre pour les moteurs de recherche",
+        "seoDescription": "Description SEO",
+        "seoDescriptionPlaceholder": "Description pour les moteurs de recherche",
+        "tags": "Tags",
+        "tagsPlaceholder": "Ajouter des tags"
       }
     },
     "content": {
@@ -539,6 +650,50 @@
       "demo": "Compte de démonstration",
       "logout": "Se déconnecter",
       "backToHome": "Retour à l'accueil"
+    },
+    "analytics": {
+      "title": "Analytiques",
+      "comingSoon": "Bientôt Disponible",
+      "description": "Les statistiques détaillées seront disponibles prochainement"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "comingSoon": "Bientôt Disponible",
+      "description": "Les paramètres avancés seront disponibles prochainement"
+    },
+    "sidebar": {
+      "title": "Administration",
+      "subtitle": "TunisiaGBC",
+      "dashboard": "Tableau de Bord",
+      "resources": "Ressources",
+      "events": "Événements",
+      "blog": "Blog",
+      "members": "Membres",
+      "analytics": "Analytiques",
+      "settings": "Paramètres",
+      "logout": "Se déconnecter"
+    },
+    "header": {
+      "subtitle": "Panneau d'administration complet",
+      "online": "En ligne"
+    },
+    "status": {
+      "published": "Publié",
+      "draft": "Brouillon",
+      "archived": "Archivé"
+    },
+    "search": {
+      "placeholder": "Rechercher..."
+    },
+    "filter": {
+      "all": "Tous"
+    },
+    "confirm": {
+      "deleteTitle": "Confirmer la Suppression",
+      "deleteMessage": "Êtes-vous sûr de vouloir supprimer \"{{title}}\" ? Cette action est irréversible."
+    },
+    "form": {
+      "addTag": "Ajouter un tag"
     }
   }
 }

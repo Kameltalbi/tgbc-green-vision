@@ -1,40 +1,30 @@
-import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
+import AdminAuth from '../components/AdminAuth';
+import AdminSidebar from '../components/AdminSidebar';
+import ResourcesManager from '../components/ResourcesManager';
+import EventsManager from '../components/EventsManager';
+import BlogManager from '../components/BlogManager';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Badge } from '../components/ui/badge';
 import { 
   Users, 
   FileText, 
-  Plus, 
-  Edit, 
-  Trash2, 
-  CheckCircle, 
-  XCircle, 
-  Upload,
-  Download,
+  Calendar, 
+  BarChart3, 
+  LogOut,
+  Plus,
+  Edit,
+  Trash2,
   Eye,
   Settings,
-  BarChart3,
-  Calendar,
   Mail,
-  LogOut
-} from "lucide-react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import AdminAuth from "@/components/AdminAuth";
-import { useTranslation } from "react-i18next";
-import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  CheckCircle,
+  XCircle
+} from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -42,14 +32,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+} from '../components/ui/table';
 
 interface MembershipRequest {
   id: number;
@@ -64,45 +47,12 @@ interface MembershipRequest {
   submittedAt: string;
 }
 
-interface Resource {
-  id: number;
-  title: string;
-  description: string;
-  type: 'document' | 'video' | 'presentation' | 'guide';
-  category: 'regulation' | 'technical' | 'training' | 'research';
-  language: 'fr' | 'en' | 'ar';
-  fileUrl: string;
-  size: string;
-  uploadDate: string;
-  status: 'draft' | 'published' | 'archived';
-}
-
-interface Event {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  time: string;
-  location: string;
-  day: number;
-  month: number;
-  year: number;
-  status: 'draft' | 'published' | 'archived';
-  createdAt: string;
-}
-
 const Admin = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'memberships' | 'resources' | 'events' | 'content'>('dashboard');
+  const [activeSection, setActiveSection] = useState('dashboard');
   const [membershipRequests, setMembershipRequests] = useState<MembershipRequest[]>([]);
-  const [resources, setResources] = useState<Resource[]>([]);
-  const [events, setEvents] = useState<Event[]>([]);
-  const [isResourceDialogOpen, setIsResourceDialogOpen] = useState(false);
-  const [isEventDialogOpen, setIsEventDialogOpen] = useState(false);
-  const [editingResource, setEditingResource] = useState<Resource | null>(null);
-  const [editingEvent, setEditingEvent] = useState<Event | null>(null);
 
   // Vérifier l'authentification au chargement
   useEffect(() => {
@@ -141,63 +91,6 @@ const Admin = () => {
         submittedAt: "2024-01-10"
       }
     ]);
-
-    setResources([
-      {
-        id: 1,
-        title: "Guide du Bâtiment Vert",
-        description: "Guide complet pour la conception et la construction de bâtiments durables",
-        type: "guide",
-        category: "technical",
-        language: "fr",
-        fileUrl: "/resources/guide-batiment-vert.pdf",
-        size: "2.5 MB",
-        uploadDate: "2024-01-15",
-        status: "published"
-      }
-    ]);
-
-    setEvents([
-      {
-        id: 1,
-        title: "World Green Building Week",
-        description: "#BeBoldOnBuildings - Une semaine dédiée au bâtiment durable avec conférences, ateliers et visites de sites exemplaires",
-        date: "8-12 Septembre 2025",
-        time: "09:00 - 18:00",
-        location: "Tunis",
-        day: 8,
-        month: 8,
-        year: 2025,
-        status: "published",
-        createdAt: "2024-01-15"
-      },
-      {
-        id: 2,
-        title: "Conférence Économie Circulaire",
-        description: "Découvrez comment l'économie circulaire transforme le secteur du bâtiment en Tunisie",
-        date: "15 Octobre 2025",
-        time: "14:00 - 17:00",
-        location: "Sfax",
-        day: 15,
-        month: 9,
-        year: 2025,
-        status: "published",
-        createdAt: "2024-01-10"
-      },
-      {
-        id: 3,
-        title: "Formation Green Campus & Schools",
-        description: "Formation pratique pour les responsables d'établissements scolaires et universitaires",
-        date: "22 Novembre 2025",
-        time: "09:00 - 16:00",
-        location: "Sousse",
-        day: 22,
-        month: 10,
-        year: 2025,
-        status: "draft",
-        createdAt: "2024-01-05"
-      }
-    ]);
   }, []);
 
   const handleLogout = () => {
@@ -223,152 +116,132 @@ const Admin = () => {
     toast.success(action === 'approve' ? 'Adhésion approuvée' : 'Adhésion rejetée');
   };
 
-  const handleResourceSubmit = (resourceData: Partial<Resource>) => {
-    if (editingResource) {
-      setResources(prev => 
-        prev.map(res => 
-          res.id === editingResource.id 
-            ? { ...res, ...resourceData }
-            : res
-        )
-      );
-      toast.success('Ressource mise à jour');
-    } else {
-      const newResource: Resource = {
-        id: Date.now(),
-        ...resourceData,
-        uploadDate: new Date().toISOString().split('T')[0],
-        status: 'draft'
-      } as Resource;
-      setResources(prev => [...prev, newResource]);
-      toast.success('Ressource ajoutée');
-    }
-    setIsResourceDialogOpen(false);
-    setEditingResource(null);
-  };
-
-  const handleResourceDelete = (id: number) => {
-    setResources(prev => prev.filter(res => res.id !== id));
-    toast.success('Ressource supprimée');
-  };
-
   const stats = {
     totalMembers: 156,
     pendingRequests: membershipRequests.filter(req => req.status === 'pending').length,
-    totalResources: resources.length,
-    publishedResources: resources.filter(res => res.status === 'published').length
+    totalResources: 24,
+    publishedResources: 18,
+    totalEvents: 12,
+    upcomingEvents: 8,
+    totalPosts: 45,
+    publishedPosts: 38
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-subtle">
-      <Navigation />
+  const renderContent = () => {
+    switch (activeSection) {
+      case 'dashboard':
+        return (
+          <div className="space-y-6">
+            {/* Stats Overview */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    {t('admin.dashboard.stats.totalMembers')}
+                  </CardTitle>
+                  <Users className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{stats.totalMembers}</div>
+                  <p className="text-xs text-muted-foreground">
+                    +12% par rapport au mois dernier
+                  </p>
+                </CardContent>
+              </Card>
 
-      <div className="container mx-auto px-4 py-24">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                {t('admin.title')}
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                {t('admin.subtitle')}
-              </p>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    {t('admin.dashboard.stats.pendingRequests')}
+                  </CardTitle>
+                  <Mail className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{stats.pendingRequests}</div>
+                  <p className="text-xs text-muted-foreground">
+                    En attente de validation
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    {t('admin.dashboard.stats.totalResources')}
+                  </CardTitle>
+                  <FileText className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{stats.totalResources}</div>
+                  <p className="text-xs text-muted-foreground">
+                    {stats.publishedResources} publiées
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    {t('admin.dashboard.stats.totalEvents')}
+                  </CardTitle>
+                  <Calendar className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{stats.totalEvents}</div>
+                  <p className="text-xs text-muted-foreground">
+                    {stats.upcomingEvents} à venir
+                  </p>
+                </CardContent>
+              </Card>
             </div>
-            <Button 
-              variant="outline" 
-              onClick={handleLogout}
-              className="flex items-center gap-2"
-            >
-              <LogOut className="h-4 w-4" />
-              {t('admin.auth.logout')}
-            </Button>
-          </div>
-        </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="shadow-card border-none">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">{t('admin.stats.totalMembers')}</p>
-                  <p className="text-2xl font-bold text-foreground">{stats.totalMembers}</p>
-                </div>
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-card border-none">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">{t('admin.stats.pendingRequests')}</p>
-                  <p className="text-2xl font-bold text-foreground">{stats.pendingRequests}</p>
-                </div>
-                <Mail className="h-8 w-8 text-accent" />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-card border-none">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">{t('admin.stats.totalResources')}</p>
-                  <p className="text-2xl font-bold text-foreground">{stats.totalResources}</p>
-                </div>
-                <FileText className="h-8 w-8 text-secondary" />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-card border-none">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">{t('admin.stats.publishedResources')}</p>
-                  <p className="text-2xl font-bold text-foreground">{stats.publishedResources}</p>
-                </div>
-                <BarChart3 className="h-8 w-8 text-primary" />
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Tabs */}
-        <div className="mb-8">
-          <div className="flex space-x-1 bg-muted p-1 rounded-lg w-fit">
-            {[
-            { id: 'dashboard', label: t('admin.tabs.dashboard'), icon: <BarChart3 className="h-4 w-4" /> },
-            { id: 'memberships', label: t('admin.tabs.memberships'), icon: <Users className="h-4 w-4" /> },
-            { id: 'resources', label: t('admin.tabs.resources'), icon: <FileText className="h-4 w-4" /> },
-            { id: 'events', label: t('admin.tabs.events'), icon: <Calendar className="h-4 w-4" /> },
-            { id: 'content', label: t('admin.tabs.content'), icon: <Settings className="h-4 w-4" /> }
-            ].map((tab) => (
-              <Button
-                key={tab.id}
-                variant={activeTab === tab.id ? "default" : "ghost"}
-                onClick={() => setActiveTab(tab.id as any)}
-                className="flex items-center gap-2"
-              >
-                {tab.icon}
-                {tab.label}
-              </Button>
-            ))}
-          </div>
-        </div>
-
-        {/* Tab Content */}
-        {activeTab === 'dashboard' && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card className="shadow-card border-none">
+            {/* Quick Actions */}
+            <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5" />
-                  {t('admin.dashboard.recentActivity')}
-                </CardTitle>
+                <CardTitle>{t('admin.dashboard.quickActions')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <Button 
+                    variant="outline" 
+                    className="h-20 flex flex-col gap-2"
+                    onClick={() => setActiveSection('members')}
+                  >
+                    <Users className="h-6 w-6" />
+                    <span className="text-sm">{t('admin.dashboard.manageMembers')}</span>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="h-20 flex flex-col gap-2"
+                    onClick={() => setActiveSection('resources')}
+                  >
+                    <FileText className="h-6 w-6" />
+                    <span className="text-sm">{t('admin.dashboard.manageResources')}</span>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="h-20 flex flex-col gap-2"
+                    onClick={() => setActiveSection('events')}
+                  >
+                    <Calendar className="h-6 w-6" />
+                    <span className="text-sm">{t('admin.dashboard.manageEvents')}</span>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="h-20 flex flex-col gap-2"
+                    onClick={() => setActiveSection('blog')}
+                  >
+                    <FileText className="h-6 w-6" />
+                    <span className="text-sm">{t('admin.dashboard.manageBlog')}</span>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Recent Activity */}
+            <Card>
+              <CardHeader>
+                <CardTitle>{t('admin.dashboard.recentActivity')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -386,48 +259,30 @@ const Admin = () => {
                       <p className="text-xs text-muted-foreground">Il y a 1 jour</p>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-card border-none">
-              <CardHeader>
-                <CardTitle>{t('admin.dashboard.quickActions')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-4">
-                  <Button 
-                    variant="outline" 
-                    className="h-20 flex flex-col gap-2"
-                    onClick={() => setActiveTab('memberships')}
-                  >
-                    <Users className="h-6 w-6" />
-                    <span className="text-sm">{t('admin.actions.manageMembers')}</span>
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    className="h-20 flex flex-col gap-2"
-                    onClick={() => setIsResourceDialogOpen(true)}
-                  >
-                    <Plus className="h-6 w-6" />
-                    <span className="text-sm">{t('admin.actions.addResource')}</span>
-                  </Button>
+                  <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                    <Calendar className="h-5 w-5 text-secondary" />
+                    <div className="flex-1">
+                      <p className="text-sm font-medium">{t('admin.dashboard.newEvent')}</p>
+                      <p className="text-xs text-muted-foreground">Il y a 3 jours</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-        )}
+        );
 
-        {activeTab === 'memberships' && (
-          <Card className="shadow-card border-none">
+      case 'members':
+        return (
+          <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
-                  {t('admin.memberships.title')}
+                  {t('admin.members.title')}
                 </span>
                 <Badge variant="secondary">
-                  {membershipRequests.filter(req => req.status === 'pending').length} {t('admin.memberships.pending')}
+                  {membershipRequests.filter(req => req.status === 'pending').length} {t('admin.members.pending')}
                 </Badge>
               </CardTitle>
             </CardHeader>
@@ -435,12 +290,12 @@ const Admin = () => {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>{t('admin.memberships.name')}</TableHead>
-                    <TableHead>{t('admin.memberships.email')}</TableHead>
-                    <TableHead>{t('admin.memberships.company')}</TableHead>
-                    <TableHead>{t('admin.memberships.type')}</TableHead>
-                    <TableHead>{t('admin.memberships.status')}</TableHead>
-                    <TableHead>{t('admin.memberships.actions')}</TableHead>
+                    <TableHead>{t('admin.members.name')}</TableHead>
+                    <TableHead>{t('admin.members.email')}</TableHead>
+                    <TableHead>{t('admin.members.company')}</TableHead>
+                    <TableHead>{t('admin.members.type')}</TableHead>
+                    <TableHead>{t('admin.members.status')}</TableHead>
+                    <TableHead>{t('admin.members.actions')}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -463,7 +318,7 @@ const Admin = () => {
                             request.status === 'rejected' ? 'destructive' : 'secondary'
                           }
                         >
-                          {t(`admin.memberships.status.${request.status}`)}
+                          {t(`admin.members.status.${request.status}`)}
                         </Badge>
                       </TableCell>
                       <TableCell>
@@ -499,280 +354,96 @@ const Admin = () => {
               </Table>
             </CardContent>
           </Card>
-        )}
+        );
 
-        {activeTab === 'resources' && (
-          <Card className="shadow-card border-none">
+      case 'resources':
+        return <ResourcesManager />;
+
+      case 'events':
+        return <EventsManager />;
+
+      case 'blog':
+        return <BlogManager />;
+
+      case 'analytics':
+        return (
+          <Card>
             <CardHeader>
-              <CardTitle className="flex items-center justify-between">
-                <span className="flex items-center gap-2">
-                  <FileText className="h-5 w-5" />
-                  {t('admin.resources.title')}
-                </span>
-                <Button onClick={() => setIsResourceDialogOpen(true)}>
-                  <Plus className="h-4 w-4 mr-2" />
-                  {t('admin.resources.add')}
-                </Button>
+              <CardTitle className="flex items-center gap-2">
+                <BarChart3 className="h-5 w-5" />
+                {t('admin.analytics.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>{t('admin.resources.title')}</TableHead>
-                    <TableHead>{t('admin.resources.type')}</TableHead>
-                    <TableHead>{t('admin.resources.category')}</TableHead>
-                    <TableHead>{t('admin.resources.status')}</TableHead>
-                    <TableHead>{t('admin.resources.actions')}</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {resources.map((resource) => (
-                    <TableRow key={resource.id}>
-                      <TableCell className="font-medium">{resource.title}</TableCell>
-                      <TableCell>
-                        <Badge variant="outline">
-                          {t(`resources.types.${resource.type}`)}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <Badge variant="secondary">
-                          {t(`resources.categories.${resource.category}`)}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <Badge 
-                          variant={
-                            resource.status === 'published' ? 'default' :
-                            resource.status === 'archived' ? 'destructive' : 'secondary'
-                          }
-                        >
-                          {t(`admin.resources.status.${resource.status}`)}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <div className="flex gap-2">
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => {
-                              setEditingResource(resource);
-                              setIsResourceDialogOpen(true);
-                            }}
-                          >
-                            <Edit className="h-4 w-4" />
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => handleResourceDelete(resource.id)}
-                            className="text-red-600 hover:text-red-700"
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+              <div className="text-center py-12">
+                <BarChart3 className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                <h3 className="text-lg font-medium mb-2">{t('admin.analytics.comingSoon')}</h3>
+                <p className="text-muted-foreground">{t('admin.analytics.description')}</p>
+              </div>
             </CardContent>
           </Card>
-        )}
+        );
 
-        {activeTab === 'content' && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card className="shadow-card border-none">
-              <CardHeader>
-                <CardTitle>{t('admin.content.homePage')}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="hero-title">{t('admin.content.heroTitle')}</Label>
-                  <Input id="hero-title" defaultValue="Construire aujourd'hui, penser demain" />
-                </div>
-                <div>
-                  <Label htmlFor="hero-subtitle">{t('admin.content.heroSubtitle')}</Label>
-                  <Textarea id="hero-subtitle" defaultValue="Promouvoir une culture du bâtiment durable en Tunisie" />
-                </div>
-                <Button className="w-full">{t('admin.content.save')}</Button>
-              </CardContent>
-            </Card>
+      case 'settings':
+        return (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Settings className="h-5 w-5" />
+                {t('admin.settings.title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center py-12">
+                <Settings className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                <h3 className="text-lg font-medium mb-2">{t('admin.settings.comingSoon')}</h3>
+                <p className="text-muted-foreground">{t('admin.settings.description')}</p>
+              </div>
+            </CardContent>
+          </Card>
+        );
 
-            <Card className="shadow-card border-none">
-              <CardHeader>
-                <CardTitle>{t('admin.content.aboutPage')}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="about-title">{t('admin.content.aboutTitle')}</Label>
-                  <Input id="about-title" defaultValue="À propos du TunisiaGBC" />
-                </div>
-                <div>
-                  <Label htmlFor="about-description">{t('admin.content.aboutDescription')}</Label>
-                  <Textarea id="about-description" rows={4} />
-                </div>
-                <Button className="w-full">{t('admin.content.save')}</Button>
-              </CardContent>
-            </Card>
-          </div>
-        )}
-
-        {/* Resource Dialog */}
-        <Dialog open={isResourceDialogOpen} onOpenChange={setIsResourceDialogOpen}>
-          <DialogContent className="max-w-2xl">
-            <DialogHeader>
-              <DialogTitle>
-                {editingResource ? t('admin.resources.edit') : t('admin.resources.add')}
-              </DialogTitle>
-            </DialogHeader>
-            <ResourceForm 
-              resource={editingResource}
-              onSubmit={handleResourceSubmit}
-              onCancel={() => {
-                setIsResourceDialogOpen(false);
-                setEditingResource(null);
-              }}
-            />
-          </DialogContent>
-        </Dialog>
-      </div>
-
-      <Footer />
-    </div>
-  );
-};
-
-// Composant pour le formulaire de ressource
-const ResourceForm = ({ 
-  resource, 
-  onSubmit, 
-  onCancel 
-}: { 
-  resource: Resource | null;
-  onSubmit: (data: Partial<Resource>) => void;
-  onCancel: () => void;
-}) => {
-  const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    title: resource?.title || '',
-    description: resource?.description || '',
-    type: resource?.type || 'document',
-    category: resource?.category || 'technical',
-    language: resource?.language || 'fr',
-    status: resource?.status || 'draft'
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSubmit(formData);
+      default:
+        return null;
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <Label htmlFor="title">{t('admin.resources.form.title')}</Label>
-        <Input
-          id="title"
-          value={formData.title}
-          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          required
-        />
-      </div>
+    <div className="min-h-screen bg-gray-50 flex">
+      {/* Sidebar */}
+      <AdminSidebar 
+        activeSection={activeSection}
+        onSectionChange={setActiveSection}
+        onLogout={handleLogout}
+      />
 
-      <div>
-        <Label htmlFor="description">{t('admin.resources.form.description')}</Label>
-        <Textarea
-          id="description"
-          value={formData.description}
-          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-          rows={3}
-          required
-        />
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <Label htmlFor="type">{t('admin.resources.form.type')}</Label>
-          <Select value={formData.type} onValueChange={(value) => setFormData({ ...formData, type: value as any })}>
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="document">{t('resources.types.document')}</SelectItem>
-              <SelectItem value="video">{t('resources.types.video')}</SelectItem>
-              <SelectItem value="presentation">{t('resources.types.presentation')}</SelectItem>
-              <SelectItem value="guide">{t('resources.types.guide')}</SelectItem>
-            </SelectContent>
-          </Select>
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <div className="bg-white border-b border-gray-200 px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">
+                {t(`admin.sidebar.${activeSection}`)}
+              </h1>
+              <p className="text-sm text-gray-500 mt-1">
+                {t('admin.header.subtitle')}
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <Badge variant="outline" className="text-green-600 border-green-200">
+                {t('admin.header.online')}
+              </Badge>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <Label htmlFor="category">{t('admin.resources.form.category')}</Label>
-          <Select value={formData.category} onValueChange={(value) => setFormData({ ...formData, category: value as any })}>
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="regulation">{t('resources.categories.regulation')}</SelectItem>
-              <SelectItem value="technical">{t('resources.categories.technical')}</SelectItem>
-              <SelectItem value="training">{t('resources.categories.training')}</SelectItem>
-              <SelectItem value="research">{t('resources.categories.research')}</SelectItem>
-            </SelectContent>
-          </Select>
+        {/* Content Area */}
+        <div className="flex-1 p-6 overflow-auto">
+          {renderContent()}
         </div>
       </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <Label htmlFor="language">{t('admin.resources.form.language')}</Label>
-          <Select value={formData.language} onValueChange={(value) => setFormData({ ...formData, language: value as any })}>
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="fr">🇫🇷 Français</SelectItem>
-              <SelectItem value="en">🇬🇧 English</SelectItem>
-              <SelectItem value="ar">🇹🇳 العربية</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div>
-          <Label htmlFor="status">{t('admin.resources.form.status')}</Label>
-          <Select value={formData.status} onValueChange={(value) => setFormData({ ...formData, status: value as any })}>
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="draft">{t('admin.resources.status.draft')}</SelectItem>
-              <SelectItem value="published">{t('admin.resources.status.published')}</SelectItem>
-              <SelectItem value="archived">{t('admin.resources.status.archived')}</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-
-      <div>
-        <Label htmlFor="file">{t('admin.resources.form.file')}</Label>
-        <div className="flex items-center gap-2">
-          <Input type="file" id="file" />
-          <Button type="button" variant="outline" size="sm">
-            <Upload className="h-4 w-4 mr-2" />
-            {t('admin.resources.form.upload')}
-          </Button>
-        </div>
-      </div>
-
-      <div className="flex justify-end gap-2">
-        <Button type="button" variant="outline" onClick={onCancel}>
-          {t('admin.resources.form.cancel')}
-        </Button>
-        <Button type="submit">
-          {resource ? t('admin.resources.form.update') : t('admin.resources.form.create')}
-        </Button>
-      </div>
-    </form>
+    </div>
   );
 };
 
