@@ -217,111 +217,6 @@ const EventsManager: React.FC = () => {
     }
   ];
 
-  const formFields = [
-    {
-      key: 'title',
-      label: t('admin.events.form.title'),
-      type: 'text' as const,
-      required: true,
-      placeholder: t('admin.events.form.titlePlaceholder')
-    },
-    {
-      key: 'description',
-      label: t('admin.events.form.description'),
-      type: 'textarea' as const,
-      required: true,
-      placeholder: t('admin.events.form.descriptionPlaceholder')
-    },
-    {
-      key: 'type',
-      label: t('admin.events.form.type'),
-      type: 'select' as const,
-      required: true,
-      options: [
-        { value: 'conference', label: t('admin.events.types.conference') },
-        { value: 'workshop', label: t('admin.events.types.workshop') },
-        { value: 'webinar', label: t('admin.events.types.webinar') },
-        { value: 'meeting', label: t('admin.events.types.meeting') },
-        { value: 'training', label: t('admin.events.types.training') }
-      ]
-    },
-    {
-      key: 'startDate',
-      label: t('admin.events.form.startDate'),
-      type: 'date' as const,
-      required: true
-    },
-    {
-      key: 'endDate',
-      label: t('admin.events.form.endDate'),
-      type: 'date' as const,
-      required: true
-    },
-    {
-      key: 'location',
-      label: t('admin.events.form.location'),
-      type: 'text' as const,
-      required: true,
-      placeholder: t('admin.events.form.locationPlaceholder')
-    },
-    {
-      key: 'maxAttendees',
-      label: t('admin.events.form.maxAttendees'),
-      type: 'text' as const,
-      placeholder: t('admin.events.form.maxAttendeesPlaceholder')
-    },
-    {
-      key: 'price',
-      label: t('admin.events.form.price'),
-      type: 'text' as const,
-      placeholder: t('admin.events.form.pricePlaceholder')
-    },
-    {
-      key: 'currency',
-      label: t('admin.events.form.currency'),
-      type: 'select' as const,
-      options: [
-        { value: 'TND', label: 'TND' },
-        { value: 'EUR', label: 'EUR' },
-        { value: 'USD', label: 'USD' }
-      ]
-    },
-    {
-      key: 'category',
-      label: t('admin.events.form.category'),
-      type: 'text' as const,
-      placeholder: t('admin.events.form.categoryPlaceholder')
-    },
-    {
-      key: 'language',
-      label: t('admin.events.form.language'),
-      type: 'select' as const,
-      required: true,
-      options: [
-        { value: 'fr', label: 'Français' },
-        { value: 'en', label: 'English' },
-        { value: 'ar', label: 'العربية' }
-      ]
-    },
-    {
-      key: 'status',
-      label: t('admin.events.form.status'),
-      type: 'select' as const,
-      required: true,
-      options: [
-        { value: 'published', label: t('admin.status.published') },
-        { value: 'draft', label: t('admin.status.draft') },
-        { value: 'cancelled', label: t('admin.events.status.cancelled') },
-        { value: 'archived', label: t('admin.status.archived') }
-      ]
-    },
-    {
-      key: 'tags',
-      label: t('admin.events.form.tags'),
-      type: 'tags' as const,
-      placeholder: t('admin.events.form.tagsPlaceholder')
-    }
-  ];
 
   const upcomingEvents = events.filter(e => 
     new Date(e.startDate) > new Date() && e.status === 'published'
@@ -396,16 +291,14 @@ const EventsManager: React.FC = () => {
       />
 
       {/* Form Dialog */}
-      <ContentForm
+      <EventForm
+        event={editingEvent}
         isOpen={isFormOpen}
         onClose={() => {
           setIsFormOpen(false);
           setEditingEvent(null);
         }}
         onSave={handleSave}
-        item={editingEvent}
-        title={editingEvent ? t('admin.events.editTitle') : t('admin.events.addTitle')}
-        fields={formFields}
       />
     </div>
   );
