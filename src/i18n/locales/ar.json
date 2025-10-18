@@ -3,6 +3,7 @@
     "home": "الرئيسية",
     "events": "الأحداث",
     "about": "حولنا",
+    "blog": "المدونة",
     "resources": "الموارد",
     "membership": "العضوية",
     "contact": "اتصل بنا",
@@ -539,6 +540,44 @@
       "demo": "حساب تجريبي",
       "logout": "تسجيل الخروج",
       "backToHome": "العودة إلى الصفحة الرئيسية"
+    }
+  },
+  "blog": {
+    "title": "المدونة",
+    "subtitle": "اكتشف آخر الأخبار والأدلة والرؤى حول البناء المستدام",
+    "searchPlaceholder": "البحث في المقالات...",
+    "filterByCategory": "تصفية حسب الفئة",
+    "filterByTag": "تصفية حسب العلامة",
+    "sortBy": "ترتيب حسب",
+    "allCategories": "جميع الفئات",
+    "allTags": "جميع العلامات",
+    "sortOptions": {
+      "newest": "الأحدث",
+      "oldest": "الأقدم",
+      "mostViewed": "الأكثر مشاهدة",
+      "mostLiked": "الأكثر إعجاباً"
+    },
+    "noPosts": "لم يتم العثور على مقالات",
+    "noPostsDescription": "حاول تعديل معايير البحث الخاصة بك",
+    "readMore": "اقرأ المزيد",
+    "newsletter": {
+      "title": "ابق على اطلاع",
+      "subtitle": "احصل على أحدث مقالاتنا مباشرة في صندوق الوارد الخاص بك",
+      "emailPlaceholder": "عنوان بريدك الإلكتروني",
+      "subscribe": "اشترك"
+    },
+    "article": {
+      "backToBlog": "العودة إلى المدونة",
+      "share": "مشاركة",
+      "like": "إعجاب",
+      "comment": "تعليق",
+      "articleNotFound": "المقال غير موجود",
+      "articleNotFoundDescription": "المقال الذي تبحث عنه غير موجود.",
+      "loading": "جاري تحميل المقال...",
+      "views": "مشاهدة",
+      "likes": "إعجاب",
+      "comments": "تعليق",
+      "readTime": "دقيقة قراءة"
     }
   }
 }

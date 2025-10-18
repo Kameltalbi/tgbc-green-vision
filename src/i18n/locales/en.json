@@ -3,6 +3,7 @@
     "home": "Home",
     "events": "Events",
     "about": "About",
+    "blog": "Blog",
     "resources": "Resources",
     "membership": "Membership",
     "contact": "Contact",
@@ -549,6 +550,44 @@
       "demo": "Demo account",
       "logout": "Logout",
       "backToHome": "Back to Home"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Discover the latest news, guides and insights on sustainable construction",
+    "searchPlaceholder": "Search articles...",
+    "filterByCategory": "Filter by category",
+    "filterByTag": "Filter by tag",
+    "sortBy": "Sort by",
+    "allCategories": "All categories",
+    "allTags": "All tags",
+    "sortOptions": {
+      "newest": "Newest",
+      "oldest": "Oldest",
+      "mostViewed": "Most viewed",
+      "mostLiked": "Most liked"
+    },
+    "noPosts": "No articles found",
+    "noPostsDescription": "Try modifying your search criteria",
+    "readMore": "Read more",
+    "newsletter": {
+      "title": "Stay informed",
+      "subtitle": "Receive our latest articles directly in your mailbox",
+      "emailPlaceholder": "Your email address",
+      "subscribe": "Subscribe"
+    },
+    "article": {
+      "backToBlog": "Back to blog",
+      "share": "Share",
+      "like": "Like",
+      "comment": "Comment",
+      "articleNotFound": "Article not found",
+      "articleNotFoundDescription": "The article you are looking for does not exist.",
+      "loading": "Loading article...",
+      "views": "views",
+      "likes": "likes",
+      "comments": "comments",
+      "readTime": "min read"
     }
   }
 }

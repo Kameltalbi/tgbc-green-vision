@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import { 
   BookOpen, 
   Calendar, 
@@ -215,6 +217,7 @@ const Blog: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navigation />
       {/* Header */}
       <section className="bg-gradient-primary text-white py-16 sm:py-20 lg:py-24 mt-18 sm:mt-20 lg:mt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -419,6 +422,8 @@ const Blog: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

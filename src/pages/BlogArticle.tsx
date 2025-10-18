@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import { ArrowLeft, Calendar, User, Eye, Heart, MessageCircle, Share2, Tag } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -383,6 +385,7 @@ const BlogArticle: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navigation />
       {/* Header */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -492,6 +495,8 @@ const BlogArticle: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
