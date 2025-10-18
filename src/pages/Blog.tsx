@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import { blogPosts, BlogPost } from '../data/blogPosts';
 import { 
   BookOpen, 
   Calendar, 
@@ -22,35 +23,8 @@ import { Input } from '../components/ui/input';
 import { Badge } from '../components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  author: string;
-  featuredImage?: string;
-  category: string;
-  language: string;
-  status: 'published' | 'draft' | 'archived';
-  seoTitle?: string;
-  seoDescription?: string;
-  tags: string[];
-  images?: Array<{
-    id: string;
-    url: string;
-    alt: string;
-    position: 'start' | 'middle' | 'end';
-    caption?: string;
-  }>;
-  views: number;
-  likes: number;
-  comments: number;
-  createdAt: string;
-  updatedAt: string;
-}
-
 const Blog: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -59,160 +33,75 @@ const Blog: React.FC = () => {
   const [sortBy, setSortBy] = useState('newest');
 
   useEffect(() => {
-    // Mock data for blog posts
-    const mockPosts: BlogPost[] = [
-      {
-        id: '1',
-        title: 'L\'Avenir de la Construction Durable en Tunisie',
-        excerpt: 'Découvrez les tendances et innovations qui façonnent l\'avenir de la construction durable en Tunisie.',
-        content: 'Contenu complet de l\'article...',
-        author: 'Dr. Ahmed Ben Ali',
-        featuredImage: '/images/blog/construction-durable-tunisie.jpg',
-        category: 'Innovation',
-        language: 'fr',
-        status: 'published',
-        tags: ['Construction', 'Durable', 'Innovation', 'Tunisie'],
-        views: 1245,
-        likes: 89,
-        comments: 23,
-        createdAt: '2024-01-15T10:00:00Z',
-        updatedAt: '2024-01-15T10:00:00Z'
-      },
-      {
-        id: '2',
-        title: 'Guide Pratique : Certification LEED en Tunisie',
-        excerpt: 'Un guide complet pour comprendre et obtenir la certification LEED dans le contexte tunisien.',
-        content: 'Contenu complet de l\'article...',
-        author: 'Ing. Fatma Mansouri',
-        featuredImage: '/images/blog/certification-leed.jpg',
-        category: 'Certification',
-        language: 'fr',
-        status: 'published',
-        tags: ['LEED', 'Certification', 'Guide', 'Pratique'],
-        views: 892,
-        likes: 67,
-        comments: 18,
-        createdAt: '2024-01-10T14:30:00Z',
-        updatedAt: '2024-01-10T14:30:00Z'
-      },
-      {
-        id: '3',
-        title: 'Matériaux Durables : Tendances 2024',
-        excerpt: 'Explorez les nouveaux matériaux durables qui révolutionnent l\'industrie de la construction.',
-        content: 'Contenu complet de l\'article...',
-        author: 'Arch. Mohamed Khelil',
-        featuredImage: '/images/blog/materiaux-durables.jpg',
-        category: 'Matériaux',
-        language: 'fr',
-        status: 'published',
-        tags: ['Matériaux', 'Durable', 'Innovation', '2024'],
-        views: 678,
-        likes: 45,
-        comments: 12,
-        createdAt: '2024-01-05T09:15:00Z',
-        updatedAt: '2024-01-05T09:15:00Z'
-      },
-      {
-        id: '4',
-        title: 'Économie Circulaire dans le Bâtiment',
-        excerpt: 'Comment l\'économie circulaire transforme-t-elle l\'industrie du bâtiment ?',
-        content: 'Contenu complet de l\'article...',
-        author: 'Dr. Salma Trabelsi',
-        featuredImage: '/images/blog/economie-circulaire.jpg',
-        category: 'Économie',
-        language: 'fr',
-        status: 'published',
-        tags: ['Économie Circulaire', 'Bâtiment', 'Développement Durable'],
-        views: 534,
-        likes: 38,
-        comments: 8,
-        createdAt: '2024-01-01T16:45:00Z',
-        updatedAt: '2024-01-01T16:45:00Z'
-      },
-      {
-        id: '5',
-        title: 'Technologies Vertes : Solutions Innovantes',
-        excerpt: 'Les dernières technologies vertes qui révolutionnent la construction durable.',
-        content: 'Contenu complet de l\'article...',
-        author: 'Ing. Youssef Hammami',
-        featuredImage: '/images/blog/technologies-vertes.jpg',
-        category: 'Technologie',
-        language: 'fr',
-        status: 'published',
-        tags: ['Technologie', 'Vert', 'Innovation', 'Solutions'],
-        views: 456,
-        likes: 32,
-        comments: 6,
-        createdAt: '2023-12-28T11:20:00Z',
-        updatedAt: '2023-12-28T11:20:00Z'
-      }
-    ];
-    setPosts(mockPosts);
-    setFilteredPosts(mockPosts);
+    // Use multilingual blog posts data
+    setPosts(blogPosts);
+    setFilteredPosts(blogPosts);
   }, []);
 
+  // Get current language
+  const currentLanguage = i18n.language as 'fr' | 'en' | 'ar';
+
+  // Filter and search posts
   useEffect(() => {
-    let filtered = posts.filter(post => post.status === 'published');
+    let filtered = posts.filter(post => {
+      const matchesSearch = searchTerm === '' || 
+        post.title[currentLanguage]?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt[currentLanguage]?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.author[currentLanguage]?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.tags[currentLanguage]?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
 
-    // Filter by search term
-    if (searchTerm) {
-      filtered = filtered.filter(post => 
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      );
-    }
+      const matchesCategory = selectedCategory === 'all' || 
+        post.category[currentLanguage] === selectedCategory;
 
-    // Filter by category
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(post => post.category === selectedCategory);
-    }
+      const matchesTag = selectedTag === 'all' || 
+        post.tags[currentLanguage]?.includes(selectedTag);
 
-    // Filter by tag
-    if (selectedTag !== 'all') {
-      filtered = filtered.filter(post => post.tags.includes(selectedTag));
-    }
+      return matchesSearch && matchesCategory && matchesTag;
+    });
 
     // Sort posts
-    switch (sortBy) {
-      case 'newest':
-        filtered.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-        break;
-      case 'oldest':
-        filtered.sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
-        break;
-      case 'mostViewed':
-        filtered.sort((a, b) => b.views - a.views);
-        break;
-      case 'mostLiked':
-        filtered.sort((a, b) => b.likes - a.likes);
-        break;
-    }
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'newest':
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        case 'oldest':
+          return new Date(a.date).getTime() - new Date(b.date).getTime();
+        case 'mostViewed':
+          return b.views - a.views;
+        case 'mostLiked':
+          return b.likes - a.likes;
+        default:
+          return 0;
+      }
+    });
 
     setFilteredPosts(filtered);
-  }, [posts, searchTerm, selectedCategory, selectedTag, sortBy]);
+  }, [posts, searchTerm, selectedCategory, selectedTag, sortBy, currentLanguage]);
 
-  const categories = ['all', ...Array.from(new Set(posts.map(post => post.category)))];
-  const tags = ['all', ...Array.from(new Set(posts.flatMap(post => post.tags)))];
+  // Get unique categories and tags
+  const categories = Array.from(new Set(posts.map(post => post.category[currentLanguage]).filter(Boolean)));
+  const allTags = Array.from(new Set(posts.flatMap(post => post.tags[currentLanguage] || [])));
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('fr-FR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
+  // Get category color
   const getCategoryColor = (category: string) => {
-    const colors = {
+    const colors: Record<string, string> = {
       'Innovation': 'bg-blue-100 text-blue-800',
       'Certification': 'bg-green-100 text-green-800',
       'Matériaux': 'bg-purple-100 text-purple-800',
-      'Économie': 'bg-orange-100 text-orange-800',
-      'Technologie': 'bg-pink-100 text-pink-800'
+      'Énergie': 'bg-orange-100 text-orange-800',
+      'Technologie': 'bg-pink-100 text-pink-800',
+      // English translations
+      'Materials': 'bg-purple-100 text-purple-800',
+      'Energy': 'bg-orange-100 text-orange-800',
+      'Technology': 'bg-pink-100 text-pink-800',
+      // Arabic translations
+      'الابتكار': 'bg-blue-100 text-blue-800',
+      'الشهادة': 'bg-green-100 text-green-800',
+      'المواد': 'bg-purple-100 text-purple-800',
+      'الطاقة': 'bg-orange-100 text-orange-800',
+      'التقنية': 'bg-pink-100 text-pink-800'
     };
-    return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[category] || 'bg-gray-100 text-gray-800';
   };
 
   return (
@@ -225,11 +114,11 @@ const Blog: React.FC = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <BookOpen className="h-8 w-8 sm:h-10 sm:w-10" />
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-                {t('admin.blog.public.title')}
+                {t('blog.title')}
               </h1>
             </div>
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
-              {t('admin.blog.public.subtitle')}
+              {t('blog.subtitle')}
             </p>
           </div>
         </div>
@@ -238,13 +127,13 @@ const Blog: React.FC = () => {
       {/* Filters */}
       <section className="py-8 bg-white border-b">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
             <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
               {/* Search */}
               <div className="relative flex-1 sm:max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
-                  placeholder={t('admin.blog.public.searchPlaceholder')}
+                  placeholder={t('blog.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -257,9 +146,10 @@ const Blog: React.FC = () => {
                   <SelectValue placeholder={t('blog.filterByCategory')} />
                 </SelectTrigger>
                 <SelectContent>
-                  {categories.map(category => (
+                  <SelectItem value="all">{t('blog.allCategories')}</SelectItem>
+                  {categories.map((category) => (
                     <SelectItem key={category} value={category}>
-                      {category === 'all' ? t('blog.allCategories') : category}
+                      {category}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -271,105 +161,110 @@ const Blog: React.FC = () => {
                   <SelectValue placeholder={t('blog.filterByTag')} />
                 </SelectTrigger>
                 <SelectContent>
-                  {tags.map(tag => (
+                  <SelectItem value="all">{t('blog.allTags')}</SelectItem>
+                  {allTags.map((tag) => (
                     <SelectItem key={tag} value={tag}>
-                      {tag === 'all' ? t('blog.allTags') : tag}
+                      {tag}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
-            </div>
 
-            {/* Sort */}
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full sm:w-48">
-                <SelectValue placeholder={t('blog.sortBy')} />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="newest">{t('blog.sortOptions.newest')}</SelectItem>
-                <SelectItem value="oldest">{t('blog.sortOptions.oldest')}</SelectItem>
-                <SelectItem value="mostViewed">{t('blog.sortOptions.mostViewed')}</SelectItem>
-                <SelectItem value="mostLiked">{t('blog.sortOptions.mostLiked')}</SelectItem>
-              </SelectContent>
-            </Select>
+              {/* Sort */}
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className="w-full sm:w-48">
+                  <SelectValue placeholder={t('blog.sortBy')} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="newest">{t('blog.sortOptions.newest')}</SelectItem>
+                  <SelectItem value="oldest">{t('blog.sortOptions.oldest')}</SelectItem>
+                  <SelectItem value="mostViewed">{t('blog.sortOptions.mostViewed')}</SelectItem>
+                  <SelectItem value="mostLiked">{t('blog.sortOptions.mostLiked')}</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Blog Posts */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section className="py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
-              <BookOpen className="h-16 w-16 mx-auto text-gray-400 mb-4" />
-              <h3 className="text-xl font-medium text-gray-900 mb-2">
+              <BookOpen className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {t('blog.noPosts')}
               </h3>
-              <p className="text-gray-500">
+              <p className="text-gray-600">
                 {t('blog.noPostsDescription')}
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  {post.featuredImage && (
-                    <div className="aspect-video bg-gray-200">
+                <Card key={post.id} className="group hover:shadow-lg transition-all duration-300">
+                  <CardHeader className="p-0">
+                    {/* Featured Image */}
+                    <div className="relative h-48 overflow-hidden rounded-t-lg">
                       <img
                         src={post.featuredImage}
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = '/placeholder.svg';
-                        }}
+                        alt={post.title[currentLanguage] || post.title.fr}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
+                      <div className="absolute top-4 left-4">
+                        <Badge className={getCategoryColor(post.category[currentLanguage] || post.category.fr)}>
+                          {post.category[currentLanguage] || post.category.fr}
+                        </Badge>
+                      </div>
                     </div>
-                  )}
-                  <CardHeader>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Badge className={getCategoryColor(post.category)}>
-                        {post.category}
-                      </Badge>
-                    </div>
-                    <CardTitle className="text-lg sm:text-xl line-clamp-2">
-                      {post.title}
-                    </CardTitle>
-                    <p className="text-gray-600 text-sm line-clamp-3">
-                      {post.excerpt}
-                    </p>
                   </CardHeader>
-                  <CardContent>
+
+                  <CardContent className="p-6">
                     <div className="space-y-4">
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-gray-900 line-clamp-2 group-hover:text-primary transition-colors">
+                        {post.title[currentLanguage] || post.title.fr}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-gray-600 line-clamp-3">
+                        {post.excerpt[currentLanguage] || post.excerpt.fr}
+                      </p>
+
                       {/* Author and Date */}
                       <div className="flex items-center gap-4 text-sm text-gray-500">
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-2">
                           <User className="h-4 w-4" />
-                          {post.author}
+                          <span>{post.author[currentLanguage] || post.author.fr}</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-2">
                           <Calendar className="h-4 w-4" />
-                          {formatDate(post.createdAt)}
+                          <span>{new Date(post.date).toLocaleDateString()}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="h-4 w-4" />
+                          <span>{post.readTime} min</span>
                         </div>
                       </div>
 
                       {/* Tags */}
-                      <div className="flex flex-wrap gap-1">
-                        {post.tags.slice(0, 3).map((tag, index) => (
+                      <div className="flex flex-wrap gap-2">
+                        {(post.tags[currentLanguage] || post.tags.fr)?.slice(0, 3).map((tag, index) => (
                           <Badge key={index} variant="outline" className="text-xs">
                             <Tag className="h-3 w-3 mr-1" />
                             {tag}
                           </Badge>
                         ))}
-                        {post.tags.length > 3 && (
+                        {(post.tags[currentLanguage] || post.tags.fr)?.length > 3 && (
                           <Badge variant="outline" className="text-xs">
-                            +{post.tags.length - 3}
+                            +{(post.tags[currentLanguage] || post.tags.fr)?.length - 3}
                           </Badge>
                         )}
                       </div>
 
                       {/* Stats */}
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                      <div className="flex items-center gap-6 text-sm text-gray-500">
                         <div className="flex items-center gap-1">
                           <Eye className="h-4 w-4" />
                           {post.views}
@@ -400,20 +295,21 @@ const Blog: React.FC = () => {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-12 sm:py-16 bg-primary text-white">
+      {/* Newsletter */}
+      <section className="bg-primary text-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">
               {t('blog.newsletter.title')}
             </h2>
-            <p className="text-lg text-white/90 mb-6">
+            <p className="text-xl text-white/90 mb-8">
               {t('blog.newsletter.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input
+                type="email"
                 placeholder={t('blog.newsletter.emailPlaceholder')}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
+                className="flex-1"
               />
               <Button variant="secondary" className="whitespace-nowrap">
                 {t('blog.newsletter.subscribe')}
