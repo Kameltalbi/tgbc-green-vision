@@ -3,6 +3,7 @@
     "home": "Accueil",
     "events": "Événements",
     "about": "À propos",
+    "blog": "Blog",
     "resources": "Ressources",
     "membership": "Adhésion",
     "contact": "Contact",
@@ -914,5 +915,29 @@
     "form": {
       "addTag": "Ajouter un tag"
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Découvrez les dernières actualités, guides et insights sur la construction durable",
+    "searchPlaceholder": "Rechercher des articles...",
+    "filterByCategory": "Filtrer par catégorie",
+    "filterByTag": "Filtrer par tag",
+    "sortBy": "Trier par",
+    "allCategories": "Toutes les catégories",
+    "allTags": "Tous les tags",
+    "sortOptions": {
+      "newest": "Plus récent",
+      "oldest": "Plus ancien",
+      "mostViewed": "Plus vus",
+      "mostLiked": "Plus aimés"
+    },
+    "noPosts": "Aucun article trouvé",
+    "noPostsDescription": "Essayez de modifier vos critères de recherche",
+    "readMore": "Lire la suite",
+    "newsletter": {
+      "title": "Restez informé",
+      "subtitle": "Recevez nos derniers articles directement dans votre boîte mail",
+      "emailPlaceholder": "Votre adresse email",
+      "subscribe": "S'abonner"
+    }
   }
-}

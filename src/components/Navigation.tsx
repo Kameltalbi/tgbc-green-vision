@@ -14,6 +14,7 @@ const Navigation = () => {
     { path: "/about", label: t('nav.about') },
     { path: "/resources", label: t('nav.resources') },
     { path: "/events", label: t('nav.events') },
+    { path: "/blog", label: t('nav.blog') },
     { path: "/membership", label: t('nav.membership') },
     { path: "/contact", label: t('nav.contact') },
   ];
