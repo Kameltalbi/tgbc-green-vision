@@ -7,6 +7,7 @@ import AdminSidebar from '../components/AdminSidebar';
 import ResourcesManager from '../components/ResourcesManager';
 import EventsManager from '../components/EventsManager';
 import BlogManager from '../components/BlogManager';
+import AnalyticsManager from '../components/AnalyticsManager';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -366,23 +367,7 @@ const Admin = () => {
         return <BlogManager />;
 
       case 'analytics':
-        return (
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5" />
-                {t('admin.analytics.title')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-center py-12">
-                <BarChart3 className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                <h3 className="text-lg font-medium mb-2">{t('admin.analytics.comingSoon')}</h3>
-                <p className="text-muted-foreground">{t('admin.analytics.description')}</p>
-              </div>
-            </CardContent>
-          </Card>
-        );
+        return <AnalyticsManager />;
 
       case 'settings':
         return (
